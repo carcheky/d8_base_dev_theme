@@ -1,0 +1,6 @@
+global-styling:
+  version: VERSION
+  css:
+    base:
+      css/sass-styles.css: {}
+      css/no-sass-styles.css: {}
