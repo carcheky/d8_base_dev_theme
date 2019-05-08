@@ -1,0 +1,12 @@
+name: yourthemename
+type: theme
+description: 'A theme for yourthemename.'
+core: 8.x
+libraries:
+  - yourthemename/global-styling
+base theme: classy
+regions:
+  header: Header
+  content: Content
+  sidebar_first: 'Sidebar first'
+  footer: Footer
