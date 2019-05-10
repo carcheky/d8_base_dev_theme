@@ -1,0 +1,33 @@
+{#
+/**
+ * @file
+ * Default theme implementation for a three column layout.
+ *
+ * This template provides a three column 33%-34%-33% display layout, with
+ * additional areas for the top and the bottom.
+ *
+ * Available variables:
+ * - content: The content for this layout.
+ * - attributes: HTML attributes for the layout <div>.
+ *
+ * @ingroup themeable
+ */
+#}
+{%
+  set classes = [
+    'layout',
+    'layout--fullwidth',
+  ]
+%}
+{% if content %}
+  <div{{ attributes.addClass(classes) }}>
+    <div class="fullwidth--bg-1">
+      {% if content.fullwidth %}
+        <div {{ region_attributes.fullwidth.addClass('layout__region', 'layout__region--fullwidth') }}>
+          <div class="section">
+            {{ content.fullwidth }}
+          </div>
+        </div>
+      {% endif %}    
+  </div>
+{% endif %}

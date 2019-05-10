@@ -1,0 +1,105 @@
+// NO EDITAR NUNCA ESTE ARCHIVO!!!
+
+
+// @media all and (max-width: 30em) {/* -480 */}
+// @media all and (min-width: 30em) {/* +480 */}
+// @media all and (min-width: 48em) {/* +768 */}
+// @media all and (min-width: 60em) {/* +960 */}
+// @media all and (min-width: 64em) {/* +1024 */}
+// @media all and (min-width: 75em) {/* +1200 */}
+// @media all and (min-width: 100em) {/* +1600 */}
+// ==========  Mixins para los Media Queries  ==========
+@mixin media($consulta) {
+  $media-xxs: "(max-width : 30em)"; // -480px
+  $media-xs: "(min-width : 30em)"; // +480px
+  $media-sm: "(min-width: 48em)"; // +768px
+  $media-md: "(min-width: 60em)"; // +960px
+  $media-lg: "(min-width: 64em)"; // +1024px
+  $media-xl: "(min-width: 75em)"; // +1200px
+  $media-xxl: "(min-width: 100em)"; // +1600px
+
+  @if $consulta==xxs {
+    @media #{$media-xxs} {
+      @content;
+    }
+  }
+
+  @if $consulta==xs {
+    @media #{$media-xs} {
+      @content;
+    }
+  }
+
+  @else if $consulta==sm {
+    @media #{$media-sm} {
+      @content;
+    }
+  }
+
+  @else if $consulta==md {
+    @media #{$media-md} {
+      @content;
+    }
+  }
+
+  @else if $consulta==lg {
+    @media #{$media-lg} {
+      @content;
+    }
+  }
+
+  @else if $consulta==xl {
+    @media #{$media-xl} {
+      @content;
+    }
+  }
+
+  @else if $consulta==xxl {
+    @media #{$media-xxl} {
+      @content;
+    }
+  }
+}
+
+/* MEDIA QUERY HELPER */
+
+
+.clasedesarrollo::after {
+  content: " desktop ";
+  display: block;
+  background: red;
+  z-index: 99999999999;
+  color: white;
+  font-size: 2em;
+  position: fixed;
+  bottom: 20px;
+  left: 0;
+
+  @include media(xxs) {
+    content: " xxs ";
+  }
+
+  @include media(xs) {
+    content: " xs ";
+  }
+
+  @include media(sm) {
+    content: " sm ";
+  }
+
+  @include media(md) {
+    content: " md ";
+  }
+
+  @include media(lg) {
+    content: " lg ";
+  }
+
+  @include media(xl) {
+    content: " xl ";
+  }
+
+  @include media(xxl) {
+    content: " xxl ";
+  }
+}
