@@ -1,0 +1,14 @@
+name: themerepo
+type: theme
+description: 'A theme for themerepo.'
+core: 8.x
+libraries:
+  - themerepo/global-styling
+base theme: classy
+regions:
+  preheader: Preheader
+  header: Header
+  content: Content
+  sidebar_first: 'Sidebar first'
+  prefooter: prefooter
+  footer: Footer

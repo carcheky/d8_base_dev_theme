@@ -1,0 +1,12 @@
+global-styling:
+  version: VERSION
+  css:
+    base:
+      css/sass-styles.css: {}
+      css/no-sass-styles.css: {}
+
+fullwidth-layout:
+  version: '1.0'
+  css:
+    theme:
+      layouts/fullwidth/fullwidth.css: {}
