@@ -6,4 +6,4 @@
 4. Rename 'themerepo.libraries.yml' file
 5. Search & replace "themerepo" to "yourthemename"
 6. Install && enable 
-7. Open [Prepros](https://prepros.io) and style! 
+7. Open [Prepros](https://prepros.io) and style! (or 'install live sass compiler' in vscode, you )
