@@ -44,8 +44,9 @@
 #}
 <div class="layout-container">
 
+  {{ page.preheader }}
+
   <header role="banner">
-    {{ page.preheader }}
     {{ page.header }}
   </header>
 
@@ -79,9 +80,10 @@
 
   </main>
 
+  {{ page.prefooter }}
+
   {% if page.footer %}
     <footer role="contentinfo">
-      {{ page.prefooter }}
       {{ page.footer }}
     </footer>
   {% endif %}
