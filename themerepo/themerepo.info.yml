@@ -10,5 +10,5 @@ regions:
   header: Header
   content: Content
   sidebar_first: 'Sidebar first'
-  prefooter: prefooter
+  prefooter: Prefooter
   footer: Footer
