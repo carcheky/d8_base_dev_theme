@@ -27,6 +27,7 @@
  *   comment/reply/12345).
  *
  * Regions:
+ * - page.preheader: Items for the header region.
  * - page.header: Items for the header region.
  * - page.primary_menu: Items for the primary menu region.
  * - page.secondary_menu: Items for the secondary menu region.
@@ -35,6 +36,7 @@
  * - page.content: The main content of the current page.
  * - page.sidebar_first: Items for the first sidebar.
  * - page.sidebar_second: Items for the second sidebar.
+ * - page.prefooter: Items for the footer region.
  * - page.footer: Items for the footer region.
  * - page.breadcrumb: Items for the breadcrumb region.
  *
@@ -44,48 +46,51 @@
 #}
 <div class="layout-container">
 
-  {{ page.preheader }}
-  
-  <header role="banner">
-    {{ page.header }}
-  </header>
+    {{ page.preheader }}
 
-  {{ page.primary_menu }}
-  {{ page.secondary_menu }}
+    <header role="banner">
+        {{ page.header }}
+    </header>
 
-  {{ page.breadcrumb }}
+    {{ page.primary_menu }}
+    {{ page.secondary_menu }}
 
-  {{ page.highlighted }}
+    {{ page.breadcrumb }}
 
-  {{ page.help }}
+    {{ page.highlighted }}
 
-  <main role="main">
-    <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
+    {{ page.help }}
 
-    <div class="layout-content">
-      {{ page.content }}
-    </div>{# /.layout-content #}
+    <main role="main">
+        <a id="main-content" tabindex="-1"></a>
+        {# link is in html.html.twig #}
 
-    {% if page.sidebar_first %}
-      <aside class="layout-sidebar-first" role="complementary">
-        {{ page.sidebar_first }}
-      </aside>
+        <div class="layout-content">
+            {{ page.content }}
+        </div>
+        {# /.layout-content #}
+
+        {% if page.sidebar_first %}
+            <aside class="layout-sidebar-first" role="complementary">
+                {{ page.sidebar_first }}
+            </aside>
+        {% endif %}
+
+        {% if page.sidebar_second %}
+            <aside class="layout-sidebar-second" role="complementary">
+                {{ page.sidebar_second }}
+            </aside>
+        {% endif %}
+
+    </main>
+
+    {{ page.prefooter }}
+
+    {% if page.footer %}
+        <footer role="contentinfo">
+            {{ page.footer }}
+        </footer>
     {% endif %}
 
-    {% if page.sidebar_second %}
-      <aside class="layout-sidebar-second" role="complementary">
-        {{ page.sidebar_second }}
-      </aside>
-    {% endif %}
-
-  </main>
-
-  {{ page.prefooter }}
-
-  {% if page.footer %}
-    <footer role="contentinfo">
-      {{ page.footer }}
-    </footer>
-  {% endif %}
-
-</div>{# /.layout-container #}
+</div>
+{# /.layout-container #}
