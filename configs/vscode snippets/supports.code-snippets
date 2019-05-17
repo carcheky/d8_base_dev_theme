@@ -18,9 +18,9 @@
 	"supports ": {
 		"prefix": "supports ",
 		"body": [
-			"  @supports ($1) {",
-			"  $2",
-			"  }"
+			"@supports ($1) {",
+			"	$2",
+			"}"
 		],
 		"description": "supports "
 	}
