@@ -19,7 +19,7 @@
 		"prefix": "media",
 		"body": [
 			"@include media($1) {",
-			"$2",
+			"	$2",
 			"}"
 		],
 		"description": "insert media query"
