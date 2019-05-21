@@ -11,3 +11,12 @@
 4. Search & replace "themerepo" to "yourthemename" in all files
 5. Install && enable
 6. Open [Prepros](https://prepros.io) and style! (or 'install live sass compiler' in vscode, you )
+
+
+
+
+
+
+
+## Thanks
+- https://github.com/7ninjas/scss-mixins
