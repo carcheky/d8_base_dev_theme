@@ -4,7 +4,10 @@ global-styling:
     base:
       css/sass-styles.css: {}
       css/no-sass-styles.css: {}
-
+  # js:
+  #   js/global.js: {}
+  # dependencies:
+  #   - core/jquery
 fullwidth-layout:
   version: '1.0'
   css:
