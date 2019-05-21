@@ -1,5 +1,4 @@
 // NO EDITAR NUNCA ESTE ARCHIVO!!!
-
 // @media all and (max-width: 30em) {/* -480 */}
 // @media all and (min-width: 30em) {/* +480 */}
 // @media all and (min-width: 48em) {/* +768 */}
@@ -8,14 +7,21 @@
 // @media all and (min-width: 75em) {/* +1200 */}
 // @media all and (min-width: 100em) {/* +1600 */}
 // ==========  Mixins para los Media Queries  ==========
+// $media-xxs: "(max-width : 30em)"; // -480px
+// $media-xs: "(min-width : 30em)"; // +480px
+// $media-sm: "(min-width: 48em)"; // +768px
+// $media-md: "(min-width: 60em)"; // +960px
+// $media-lg: "(min-width: 64em)"; // +1024px
+// $media-xl: "(min-width: 75em)"; // +1200px
+// $media-xxl: "(min-width: 100em)"; // +1600px
 @mixin media($consulta) {
-  $media-xxs: "(max-width : 30em)"; // -480px
-  $media-xs: "(min-width : 30em)"; // +480px
-  $media-sm: "(min-width: 48em)"; // +768px
-  $media-md: "(min-width: 60em)"; // +960px
-  $media-lg: "(min-width: 64em)"; // +1024px
-  $media-xl: "(min-width: 75em)"; // +1200px
-  $media-xxl: "(min-width: 100em)"; // +1600px
+  $media-xxs: "(max-width : 30em)";
+  $media-xs: "(min-width : 30em)";
+  $media-sm: "(min-width: 48em)";
+  $media-md: "(min-width: 60em)";
+  $media-lg: "(min-width: 64em)";
+  $media-xl: "(min-width: 75em)";
+  $media-xxl: "(min-width: 100em)";
 
   @if $consulta==xxs {
     @media #{$media-xxs} {
@@ -61,44 +67,54 @@
 }
 
 /* MEDIA QUERY HELPER */
+.clasedesarrollo {
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  width: 1px;
+  height: 1px;
+  word-wrap: normal;
 
+  &::after {
+    content: " desktop ";
+    display: block;
+    z-index: 99999999999;
+    background-color: lightgray;
+    color: gray;
+    font-size: 1em;
+    position: fixed;
+    bottom: 20px;
+    padding-left: 10px;
+    padding-right: 5px;
+    left: 0px;
+    opacity: .5;
+    text-transform: uppercase;
 
-.clasedesarrollo::after {
-  content: " desktop ";
-  display: block;
-  background: red;
-  z-index: 99999999999;
-  color: white;
-  font-size: 2em;
-  position: fixed;
-  bottom: 20px;
-  left: 0;
+    @include media(xxs) {
+      content: " xxs ";
+    }
 
-  @include media(xxs) {
-    content: " xxs ";
-  }
+    @include media(xs) {
+      content: " xs ";
+    }
 
-  @include media(xs) {
-    content: " xs ";
-  }
+    @include media(sm) {
+      content: " sm ";
+    }
 
-  @include media(sm) {
-    content: " sm ";
-  }
+    @include media(md) {
+      content: " md ";
+    }
 
-  @include media(md) {
-    content: " md ";
-  }
+    @include media(lg) {
+      content: " lg ";
+    }
 
-  @include media(lg) {
-    content: " lg ";
-  }
+    @include media(xl) {
+      content: " xl ";
+    }
 
-  @include media(xl) {
-    content: " xl ";
-  }
-
-  @include media(xxl) {
-    content: " xxl ";
+    @include media(xxl) {
+      content: " xxl ";
+    }
   }
 }
