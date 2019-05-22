@@ -4,7 +4,16 @@
 (() => {
 
   /**
-   * Your code here
+   * Your js code here
    */
 
 })();
+
+
+(function ($) {
+
+  /**
+   * Your jquery code here
+   */
+
+}(jQuery));
