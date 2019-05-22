@@ -5,7 +5,7 @@ global-styling:
       css/sass-styles.css: {}
       css/no-sass-styles.css: {}
   js:
-    js/global.js: {}
+    # js/global.js: {}
   dependencies:
     - core/jquery
 
