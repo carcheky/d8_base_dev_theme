@@ -6,10 +6,12 @@ CUALQUIER MODIFICACION DE ESTE ARCHIVO SERA SOBREESCRITA
 
 */
 
-
+// dependencias
 @import 'components/reset';
 @import 'variables';
 @import 'mixins';
+
+// especificos
 @import 'layouts';
 @import 'regions';
 @import 'components';

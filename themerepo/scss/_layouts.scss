@@ -3,3 +3,8 @@
 @import 'layouts/twocol_section';
 @import 'layouts/threecol_section';
 @import 'layouts/fourcol_section';
+
+.full-container>* {
+  max-width: $max-width-container;
+  margin: 0 auto;
+}
