@@ -4,9 +4,16 @@
 @import 'layouts/threecol_section';
 @import 'layouts/fourcol_section';
 
-.full-container>* {
-  max-width: $max-width-container;
-  margin: 0 auto;
+.full-container {
+  &>* {
+    max-width: $max-width-container;
+    margin: 0 auto;
+  }
+
+  &.region-content .region-content {
+    max-width: 100%;
+    margin: auto;
+  }
 }
 
 %container,
