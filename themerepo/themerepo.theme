@@ -16,13 +16,25 @@ function themerepo_preprocess(&$variables, $hook, $info) {
  */
 function themerepo_preprocess_layout(&$vars) {
   $vars['attributes']['class'][] = 'layout-custom';
+
   // exclusive class
   if (isset($vars['content']['content'])) {
-    foreach ($vars['content']['content'] as $key => $value) {
-      $vars['attributes']['class'][] = 'layout-'.$key;
-      break;
+      foreach ($vars['content']['content'] as $key => $value) {
+        $vars['attributes']['class'][] = 'layout-'.$key;
+        $vars['uniqueid'] = $key;
+        break;
+      }
     }
-  }
+
+  // exclusive class
+  if (isset($vars['content']['first'])) {
+      foreach ($vars['content']['first'] as $key => $value) {
+        $vars['attributes']['class'][] = 'layout-'.$key;
+        $vars['uniqueid'] = $key;
+        break;
+      }
+    }
+
 } /* END themerepo_preprocess_layout */
 
 
@@ -49,7 +61,6 @@ function themerepo_preprocess_block(&$vars) {
     if ($vars['elements']['content']['#block_content']->label()) {
       $vars['attributes']['class'][] = 'block-label-' . $vars['elements']['content']['#block_content']->label();
     }
-
   }
 } /* END themerepo_preprocess_block */
 
