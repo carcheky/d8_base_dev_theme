@@ -82,6 +82,6 @@ function themerepo_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\Fo
     '#type'          => 'checkbox',
     '#title'         => t('full-width layer'),
     '#default_value' => $theme_full_width,
-    '#description'   => t("if enabled, full-width layer appear in 1|2|3|4 column layers"),
+    '#description'   => t("if enabled, full-width layer appear in 1|2|3|4 column layers.<br>Can set max-width value in \"scss/_variables.scss\" \$max_width_container var"),
   );
 }
