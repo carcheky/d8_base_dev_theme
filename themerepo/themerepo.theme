@@ -6,6 +6,7 @@
  */
 function themerepo_preprocess(&$variables, $hook, $info) {
   $variables['theme_full_width'] = theme_get_setting('theme_full_width');
+  $variables['theme_dev_class'] = theme_get_setting('theme_dev_class');
 }
 
 
@@ -83,5 +84,14 @@ function themerepo_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\Fo
     '#title'         => t('full-width layer'),
     '#default_value' => $theme_full_width,
     '#description'   => t("if enabled, full-width layer appear in 1|2|3|4 column layers.<br>Can set max-width value in \"scss/_variables.scss\" \$max_width_container var"),
+  );
+
+
+  $theme_dev_class = theme_get_setting('theme_dev_class');
+  $form['theme_dev_class'] = array(
+    '#type'          => 'checkbox',
+    '#title'         => t('Dev Resolution Block'),
+    '#default_value' => $theme_dev_class,
+    '#description'   => t("if enabled, helper block will show"),
   );
 }
