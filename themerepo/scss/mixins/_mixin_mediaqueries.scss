@@ -78,15 +78,15 @@
     content: " desktop ";
     display: block;
     z-index: 99999999999;
-    background-color: lightgray;
-    color: gray;
+    background-color: red;
+    color: white;
     font-size: 1em;
     position: fixed;
     bottom: 20px;
     padding-left: 10px;
     padding-right: 5px;
     left: 0px;
-    opacity: .5;
+    opacity: .8;
     text-transform: uppercase;
 
     @include media(xxs) {
