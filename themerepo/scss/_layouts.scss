@@ -8,3 +8,10 @@
   max-width: $max-width-container;
   margin: 0 auto;
 }
+
+%container,
+.container,
+.containers {
+  max-width: 1240px;
+  margin: 0 auto;
+}
