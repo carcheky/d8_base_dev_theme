@@ -86,7 +86,8 @@
     padding-left: 10px;
     padding-right: 5px;
     left: 0px;
-    text-transform: uppercase;
+    text-transform: lowercase;
+    font-weight: bold;
 
     @include media(xxs) {
       content: " xxs ";
