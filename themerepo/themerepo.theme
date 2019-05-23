@@ -1,19 +1,27 @@
 <?php
 
+
+/**
+ * Implements hook_preprocess().
+ */
+function themerepo_preprocess(&$variables, $hook, $info) {
+  $variables['theme_full_width'] = theme_get_setting('theme_full_width');
+}
+
+
 /**
  * Implements hook_preprocess_HOOK() for custom layouts templates.
  *
  */
 function themerepo_preprocess_layout(&$vars) {
-    $vars['attributes']['class'][] = 'layout-custom';
-
-    // exclusive class
-    if (isset($vars['content']['content'])) {
-      foreach ($vars['content']['content'] as $key => $value) {
-        $vars['attributes']['class'][] = 'layout-'.$key;
-        break;
-      }
+  $vars['attributes']['class'][] = 'layout-custom';
+  // exclusive class
+  if (isset($vars['content']['content'])) {
+    foreach ($vars['content']['content'] as $key => $value) {
+      $vars['attributes']['class'][] = 'layout-'.$key;
+      break;
     }
+  }
 } /* END themerepo_preprocess_layout */
 
 
@@ -22,7 +30,7 @@ function themerepo_preprocess_layout(&$vars) {
  *
  */
 function themerepo_preprocess_block(&$vars) {
-if (isset($vars['elements']['content']['#block_content'])) {
+  if (isset($vars['elements']['content']['#block_content'])) {
 
     $vars['attributes']['class'][] = 'block-custom';
 
@@ -59,3 +67,21 @@ function themerepo_theme_suggestions_block_alter(array &$suggestions, array $var
   }
 }
 
+
+/**
+ * Implements hook_form_system_theme_settings_alter().
+ */
+function themerepo_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormStateInterface &$form_state, $form_id = NULL) {
+  // Work-around for a core bug affecting admin themes. See issue #943212.
+  if (isset($form_id)) {
+    return;
+  }
+
+  $theme_full_width = theme_get_setting('theme_full_width');
+  $form['theme_full_width'] = array(
+    '#type'          => 'checkbox',
+    '#title'         => t('full-width layer'),
+    '#default_value' => $theme_full_width,
+    '#description'   => t("if enabled, full-width layer appear in 1|2|3|4 column layers"),
+  );
+}
