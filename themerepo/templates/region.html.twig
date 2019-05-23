@@ -17,10 +17,12 @@
     'region',
     'region-' ~ region|clean_class,
   ]
-%}
+  %}
+
+
 {% if content %}
     {% if theme_full_width %}
-        <div class="full-container">
+        <div class="full-container region-{{region|clean_class}}">
         {% endif %}
         <div{{attributes.addClass(classes)}}>
             {{ content }}
