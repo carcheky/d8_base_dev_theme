@@ -17,6 +17,12 @@
   }
 }
 
+.path-user {
+  .full-container-content .region-content {
+    @extend %container;
+  }
+}
+
 .region {
   @extend %container;
 
