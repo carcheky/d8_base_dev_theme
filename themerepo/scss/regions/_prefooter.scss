@@ -1,6 +1,6 @@
 /* [START]  REGION PREFOOTER */
 .region-prefooter {
-  @extend %flex-regions;
+  @include flex();
 }
 
 /* [END]  REGION PREFOOTER */
