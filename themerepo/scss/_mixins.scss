@@ -2,4 +2,4 @@
 @import 'mixins/mixin_mediaqueries';
 @import 'mixins/mixin_fullhide';
 @import 'mixins/mixin_triangles';
-@import 'mixins/mixin_flex';
+@import 'mixins/mixin_flex'; // este mixin requiere @import 'mixins/mixin_mediaqueries';

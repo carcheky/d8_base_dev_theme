@@ -1,6 +1,6 @@
 /* [START]  REGION FOOTER */
 .region-footer {
-  @include flex();
+  @include flex(sm);
 }
 
 /* [END]  REGION FOOTER */
