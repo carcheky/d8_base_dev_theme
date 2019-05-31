@@ -28,7 +28,7 @@ generate_theme(){
 
 if [ ! $1 ] ; then
   echo "nombre del tema:"
-  read ${THEME_NAME}
+  read THEME_NAME
   THEME_NAME=${THEME_NAME}
 fi
 
