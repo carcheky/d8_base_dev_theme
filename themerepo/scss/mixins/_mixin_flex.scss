@@ -1,6 +1,8 @@
 // mixin para aplicar flex por defecto donde se llame vía " @extend %flex-regions "
-@mixin flex() {
-  @include media(sm) {
+// este mixin requiere @import 'mixins/mixin_mediaqueries';
+
+@mixin flex($consulta) {
+  @include media(#{$consulta}) {
     display: flex;
 
     >* {
