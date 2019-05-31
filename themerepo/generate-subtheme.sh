@@ -1,6 +1,7 @@
 #!/bin/bash
 # vars
 ORIGINAL_DIR=$(pwd);
+
 # functions
 generate_theme(){
 
