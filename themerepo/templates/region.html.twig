@@ -22,7 +22,7 @@
 
 {% if content %}
     {% if theme_full_width %}
-        <div class="full-container region-{{region|clean_class}}">
+        <div class="full-container full-container-{{region|clean_class}}">
         {% endif %}
         <div{{attributes.addClass(classes)}}>
             {{ content }}

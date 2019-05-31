@@ -5,14 +5,24 @@
 @import 'layouts/fourcol_section';
 
 .full-container {
-  &>* {
-    max-width: $max-width-container;
-    margin: 0 auto;
-  }
+  .region {
+    @extend %container;
 
-  &.region-content .region-content {
+    &.region-content {
+      max-width: 100%;
+      margin: auto;
+
+
+    }
+  }
+}
+
+.region {
+  @extend %container;
+
+  * {
     max-width: 100%;
-    margin: auto;
+    height: auto;
   }
 }
 
