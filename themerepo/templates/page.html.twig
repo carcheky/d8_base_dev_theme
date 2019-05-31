@@ -65,9 +65,16 @@
         <a id="main-content" tabindex="-1"></a>
         {# link is in html.html.twig #}
 
+        <div class="layout-precontent">
+            {{ page.precontent }}
+        </div>
         <div class="layout-content">
             {{ page.content }}
         </div>
+        <div class="layout-postcontent">
+            {{ page.postcontent }}
+        </div>
+
         {# /.layout-content #}
 
         {% if page.sidebar_first %}

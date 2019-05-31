@@ -8,7 +8,9 @@ base theme: classy
 regions:
   preheader: Preheader
   header: Header
+  precontent: PreContent
   content: Content
+  postcontent: PostContent
   sidebar_first: 'Sidebar first'
   prefooter: Prefooter
   footer: Footer
