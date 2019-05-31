@@ -1,0 +1,10 @@
+// mixin para aplicar flex por defecto donde se llame vía " @extend %flex-regions "
+@mixin flex() {
+  @include media(sm) {
+    display: flex;
+
+    >* {
+      flex: 1;
+    }
+  }
+}
