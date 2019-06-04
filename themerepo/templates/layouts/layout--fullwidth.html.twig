@@ -1,0 +1,32 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a one-column layout.
+ *
+ * Available variables:
+ * - content: The content for this layout.
+ * - attributes: HTML attributes for the layout <div>.
+ *
+ * @ingroup themeable
+ */
+#}
+{%
+  set classes = [
+    'layout',
+    'layout--fullwidth',
+  ]
+%}
+{% if content %}
+    {% if theme_full_width %}
+        <div class="full-container full-container--fullwidth full-container-{{uniqueid}}">
+        {% endif %}
+        <div{{attributes.addClass(classes)}}>
+            <div {{ region_attributes.content.addClass('layout__region', 'layout__region--content') }}>
+                {{ content.fullwidth }}
+
+            </div>
+        </div>
+        {% if theme_full_width %}
+        </div>
+    {% endif %}
+{% endif %}

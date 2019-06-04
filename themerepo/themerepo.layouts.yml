@@ -1,7 +1,7 @@
 layout_fullwidth:
   label: 'fullwidth'
-  path: layouts/fullwidth
-  template: fullwidth
+  path: templates/layouts
+  template: layout--fullwidth
   library: themerepo/fullwidth-layout
   category: 'themerepo'
   icon_map:
