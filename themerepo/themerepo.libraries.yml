@@ -5,7 +5,8 @@ global-styling:
       css/sass-styles.css: {}
       css/no-sass-styles.css: {}
   js:
+    js/mobile-menu.js: {}
     # js/global.js: {}
   dependencies:
     - core/jquery
-
+    - core/drupalSettings
