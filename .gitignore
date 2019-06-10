@@ -1,5 +1,4 @@
 
-yourthemename/css/sass-styles.css
-themerepo/prepros-6.config
-themerepo/css/sass-styles.css
-themerepo/css/sass-styles.css.map
+**/prepros-6.config
+**/sass-styles.css
+**/sass-styles.css.map
