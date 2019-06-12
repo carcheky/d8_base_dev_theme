@@ -1,0 +1,12 @@
+{
+  "name": "centrogarrigues",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "gulp --version",
+    "scss": "node-sass -watch scss -o css"
+  },
+  "author": "carcheky",
+  "license": "MIT"
+}
