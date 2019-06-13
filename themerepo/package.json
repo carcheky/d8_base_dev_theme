@@ -1,12 +1,26 @@
 {
-  "name": "centrogarrigues",
+  "name": "themerepo",
   "version": "1.0.0",
+  "main": "gulpfile.js",
   "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "gulp --version",
-    "scss": "node-sass -watch scss -o css"
-  },
   "author": "carcheky",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.6.0",
+    "browser-sync": "^2.26.7",
+    "cssnano": "^4.1.10",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^6.1.0",
+    "gulp-cli": "^2.2.0",
+    "gulp-postcss": "^8.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "node-gyp": "^5.0.0"
+  },
+  "browserslist": [
+    "last 10 years, not dead"
+  ]
 }
