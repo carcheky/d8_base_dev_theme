@@ -47,7 +47,7 @@ function watch() {
     // server: {
     //     baseDir: "./"
     // },
-    proxy: "http://centrodeestudiosgarrigues"
+    proxy: host
   });
   gulp.watch(paths.styles.src, style)
   gulp.watch(paths.styles.reload, reload);
