@@ -10,7 +10,6 @@ function themerepo_preprocess(&$variables, $hook, $info)
   $variables['theme_dev_class'] = theme_get_setting('theme_dev_class');
 
   // add BLOCK CLASS
-  $variables['attributes']['class'][] =  'blockclasses';
   if (isset($variables['elements'])) {
     if (isset($variables['elements']['#theme'])) {
       $variables['attributes']['class'][] = $variables['elements']['#theme'];
