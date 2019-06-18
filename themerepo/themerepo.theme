@@ -1,27 +1,94 @@
 <?php
 
-
 /**
  * Implements hook_preprocess().
  */
-function themerepo_preprocess(&$variables, $hook, $info) {
+function themerepo_preprocess(&$variables, $hook, $info)
+{
+  // THEME SETTINGS
   $variables['theme_full_width'] = theme_get_setting('theme_full_width');
   $variables['theme_dev_class'] = theme_get_setting('theme_dev_class');
-  $variables['mobile_menu_class'] = theme_get_setting('mobile_menu_class');
+
+  // add BLOCK CLASS
+  $variables['attributes']['class'][] =  'blockclasses';
+  if (isset($variables['elements'])) {
+    if (isset($variables['elements']['#theme'])) {
+      $variables['attributes']['class'][] = $variables['elements']['#theme'];
+    }
+    if (isset($variables['elements']['#base_plugin_id'])) {
+      // add class base_plugin_id
+      $variables['attributes']['class'][] = $variables['elements']['#base_plugin_id'];
+    }
+    if (isset($variables['elements']['#derivative_plugin_id'])) {
+      // add class derivative_plugin_id
+      $variables['attributes']['class'][] = $variables['elements']['#derivative_plugin_id'];
+    }
+    if (isset($variables['elements']['#id'])) {
+      // add class id
+      $variables['attributes']['class'][] = $variables['elements']['#id'];
+    }
+    if (isset($variables['elements']['content'])) {
+      if (isset($variables['elements']['content']['#block_content'])) {
+        $variables['attributes']['class'][] = 'block-custom';
+        if ($variables['elements']['content']['#block_content']->bundle()) {
+          // add class bundle
+          $variables['attributes']['class'][] = 'block-bundle-' . $variables['elements']['content']['#block_content']->bundle();
+        }
+        if ($variables['elements']['content']['#block_content']->id()) {
+          // add class id
+          $variables['attributes']['class'][] = 'block-id-' . $variables['elements']['content']['#block_content']->id();
+        }
+        if ($variables['elements']['content']['#block_content']->label()) {
+          // add class label
+          $variables['attributes']['class'][] = 'block-label-' . $variables['elements']['content']['#block_content']->label();
+        }
+      }
+    }
+  }
 }
 
-function themerepo_preprocess_html(&$variables) {
+
+/**
+ * Implements hook_preprocess_HOOK() for custom layouts templates.
+ *
+ */
+function themerepo_preprocess_layout(&$variables)
+{
+  $variables['attributes']['class'][] = 'layout-custom';
+  if (isset($variables['content'])) {
+    foreach ($variables['content'] as $key => $value) {
+      // exclusive class
+      if (isset($variables['content'][$key])) {
+        foreach ($variables['content'][$key] as $key2 => $value2) {
+          $variables['attributes']['class'][] = 'layout-' . $key2;
+          $variables['uniqueid'] = $key2;
+          break;
+        }
+      }
+      break;
+    }
+  }
+} /* END themerepo_preprocess_layout */
+
+
+/**
+ * Implements hook_preprocess_html().
+ */
+function themerepo_preprocess_html(&$variables)
+{
   $mobile_menu_class = theme_get_setting('mobile_menu_class');
-  $variables['#attached']['drupalSettings']['centrogarrigues']['mobile_menu']['mobile_menu_class'] = $mobile_menu_class;
+  $variables['#attached']['drupalSettings']['themerepo']['mobile_menu']['mobile_menu_class'] = $mobile_menu_class;
 
   $mobile_menu_class_place = theme_get_setting('mobile_menu_class_place');
-  $variables['#attached']['drupalSettings']['centrogarrigues']['mobile_menu']['mobile_menu_class_place'] = $mobile_menu_class_place;
+  $variables['#attached']['drupalSettings']['themerepo']['mobile_menu']['mobile_menu_class_place'] = $mobile_menu_class_place;
 }
+
 
 /**
  * Implements hook_form_system_theme_settings_alter().
  */
-function themerepo_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormStateInterface &$form_state, $form_id = NULL) {
+function themerepo_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormStateInterface &$form_state, $form_id = NULL)
+{
   // Work-around for a core bug affecting admin themes. See issue #943212.
   if (isset($form_id)) {
     return;
@@ -60,66 +127,18 @@ function themerepo_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\Fo
   );
 }
 
-/**
- * Implements hook_preprocess_HOOK() for custom layouts templates.
- *
- */
-function themerepo_preprocess_layout(&$vars) {
-  $vars['attributes']['class'][] = 'layout-custom';
-  if (isset($vars['content'])){
-    foreach ($vars['content'] as $key => $value) {
-         // exclusive class
-    if (isset($vars['content'][$key])) {
-      foreach ($vars['content'][$key] as $key2 => $value2) {
-        $vars['attributes']['class'][] = 'layout-'.$key2;
-        $vars['uniqueid'] = $key2;
-        break;
-      }
-    }
-      break;
-    }
-  }
-
-} /* END themerepo_preprocess_layout */
-
-
-/**
- * Implements hook_preprocess_HOOK() for custom blocks templates.
- *
- */
-function themerepo_preprocess_block(&$vars) {
-  if (isset($vars['elements']['content']['#block_content'])) {
-
-    $vars['attributes']['class'][] = 'block-custom';
-
-    // bundle()
-    if ($vars['elements']['content']['#block_content']->bundle()) {
-      $vars['attributes']['class'][] = 'block-bundle-' . $vars['elements']['content']['#block_content']->bundle();
-    }
-
-    // id()
-    if ($vars['elements']['content']['#block_content']->id()) {
-      $vars['attributes']['class'][] = 'block-id-' . $vars['elements']['content']['#block_content']->id();
-    }
-
-    // label()
-    if ($vars['elements']['content']['#block_content']->label()) {
-      $vars['attributes']['class'][] = 'block-label-' . $vars['elements']['content']['#block_content']->label();
-    }
-  }
-} /* END themerepo_preprocess_block */
-
 
 /**
  * Implements hook_theme_suggestions_HOOK_alter() for block types templates.
  * @param array $suggestions
  * @param array $variables
  */
-function themerepo_theme_suggestions_block_alter(array &$suggestions, array $variables) {
+function themerepo_theme_suggestions_block_alter(array &$suggestions, array $variables)
+{
   // Block suggestions for custom block bundles.
   if (isset($variables['elements']['content']['#block_content'])) {
     if ($variables['elements']['content']['#block_content']->bundle()) {
-        array_splice($suggestions, 1, 0, 'block__bundle__' . $variables['elements']['content']['#block_content']->bundle());
+      array_splice($suggestions, 1, 0, 'block__bundle__' . $variables['elements']['content']['#block_content']->bundle());
     }
   }
 }
