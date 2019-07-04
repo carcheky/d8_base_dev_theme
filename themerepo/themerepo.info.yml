@@ -3,8 +3,8 @@ type: theme
 description: 'A theme for themerepo.'
 core: 8.x
 libraries:
-  - centrogarrigues/global-styling
-  - centrogarrigues/global-scripts
+  - themerepo/global-styling
+  - themerepo/global-scripts
 base theme: classy
 regions:
   preheader: Preheader
