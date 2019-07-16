@@ -1,0 +1,11 @@
+$global-font-size: 16px;
+
+@function countRem($value) {
+  $remValue: $value / $global-font-size;
+  @return $remValue * 1rem;
+}
+
+@mixin font-size($value) {
+  // font-size: $value;
+  font-size: countRem($value); // example: @include font-size(24px);
+}
