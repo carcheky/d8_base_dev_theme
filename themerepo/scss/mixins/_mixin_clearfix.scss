@@ -10,3 +10,8 @@
     clear: both;
   }
 }
+
+%clearfix,
+.clearfix {
+  @include clearfix;
+}
