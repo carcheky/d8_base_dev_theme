@@ -1,5 +1,7 @@
 var host = "http://localhost";
-
+var scss_src = "./scss/**/*.scss";
+var scss_dest = "./css";
+var scss_reload = "index.html";
 
 // REQUIRED
 var gulp = require("gulp");
@@ -11,9 +13,9 @@ var sourcemaps = require("gulp-sourcemaps");
 var browserSync = require("browser-sync").create();
 var paths = {
   styles: {
-    src: "./scss/**/*.scss",
-    dest: "./css",
-    reload: "index.html",
+    src: scss_src,
+    dest: scss_dest,
+    reload: scss_reload,
   }
 };
 
@@ -22,15 +24,16 @@ var paths = {
 function style() {
   return (
     gulp
-      .src(paths.styles.src)
-      .pipe(sourcemaps.init())
-      .pipe(sass())
-      .on("error", sass.logError)
-      // .pipe(postcss([autoprefixer(), cssnano()]))
-      .pipe(postcss([autoprefixer()]))
-      .pipe(sourcemaps.write())
-      .pipe(gulp.dest(paths.styles.dest))
-      .pipe(browserSync.stream())
+    .src(paths.styles.src)
+    .pipe(sourcemaps.init())
+    .pipe(sass())
+    .on("error", sass.logError)
+    // .pipe(postcss([autoprefixer(), cssnano()]))
+    .pipe(postcss([autoprefixer()]))
+    // .pipe(postcss([cssnano()]))
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest(paths.styles.dest))
+    .pipe(browserSync.stream())
   );
 }
 
