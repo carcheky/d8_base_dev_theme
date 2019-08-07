@@ -138,6 +138,16 @@
   @include flex-direction($args...);
 }
 
+%flex-column,
+.flex-column {
+  @include flex-dir(column);
+}
+
+%flex-row,
+.flex-row {
+  @include flex-dir(row);
+}
+
 //----------------------------------------------------------------------
 // Flexbox Wrap
 //
@@ -163,6 +173,16 @@
   }
 
   flex-wrap: $value;
+}
+
+%flex-wrap,
+.flex-wrap {
+  @include flex-wrap(wrap);
+}
+
+%flex-nowrap,
+.flex-nowrap {
+  @include flex-wrap(nowrap);
 }
 
 //----------------------------------------------------------------------
@@ -332,6 +352,26 @@
   @include justify-content($args...);
 }
 
+%justify-content-flex-start,
+.justify-content-flex-start {
+  @include flex-just(flex-start);
+}
+
+%justify-content-flex-end,
+.justify-content-flex-end {
+  @include flex-just(flex-end);
+}
+
+%justify-content-space-between,
+.justify-content-space-between {
+  @include flex-just(space-between);
+}
+
+%justify-content-space-around,
+.justify-content-space-space-around {
+  @include flex-just(space-around);
+}
+
 //----------------------------------------------------------------------
 // Flexbox Align Items
 //
@@ -368,6 +408,16 @@
   align-items: $value;
 }
 
+%align-items-flex-start,
+.align-items-flex-start {
+  @include align-items(flex-start);
+}
+
+%align-items-flex-end,
+.align-items-flex-end {
+  @include align-items(flex-end);
+}
+
 //----------------------------------
 // Flexbox Align Self
 //
@@ -391,6 +441,16 @@
   }
 
   align-self: $value;
+}
+
+%align-self-flex-start,
+.align-self-flex-start {
+  @include align-self(flex-start);
+}
+
+%align-self-flex-end,
+.align-self-flex-end {
+  @include align-self(flex-end);
 }
 
 //----------------------------------------------------------------------
@@ -425,20 +485,22 @@
   align-content: $value;
 }
 
+%align-content-flex-start,
+.align-content-flex-start {
+  @include align-content(flex-start);
+}
+
+%align-content-flex-end,
+.align-content-flex-end {
+  @include align-content(flex-end);
+}
+
 // some utils
-.flex-column {
-  flex-direction: column;
-}
-
-.flex-row {
-  flex-direction: row;
-}
-
 .mauto {
   margin: auto !important;
 }
 
-// // flextend
+// flextend
 %flextend,
 .flextend {
   @include flexbox;
