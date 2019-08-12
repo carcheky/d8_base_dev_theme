@@ -372,6 +372,11 @@
   @include flex-just(space-around);
 }
 
+%justify-content-center,
+.justify-content-center {
+  @include flex-just(center);
+}
+
 //----------------------------------------------------------------------
 // Flexbox Align Items
 //
@@ -418,6 +423,11 @@
   @include align-items(flex-end);
 }
 
+%align-items-center,
+.align-items-center {
+  @include align-items(center);
+}
+
 //----------------------------------
 // Flexbox Align Self
 //
@@ -451,6 +461,11 @@
 %align-self-flex-end,
 .align-self-flex-end {
   @include align-self(flex-end);
+}
+
+%align-self-center,
+.align-self-center {
+  @include align-self(center);
 }
 
 //----------------------------------------------------------------------
@@ -493,6 +508,11 @@
 %align-content-flex-end,
 .align-content-flex-end {
   @include align-content(flex-end);
+}
+
+%align-content-center,
+.align-content-center {
+  @include align-content(center);
 }
 
 // some utils
