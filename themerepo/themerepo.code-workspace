@@ -1,0 +1,50 @@
+{
+  // la plantilla debe ser renombrada y colocada en la carpeta del tema
+  // en la raiz de la carpeta del tema deben estar:
+  // - este archivo (tuproyecto.code-workspace)
+  // - carpetas CSS y SCSS
+  "folders": [{
+    "path": "."
+  }],
+  "settings": {
+    "browsersync.options": {
+      "proxy": "http://themerepo.e-fti.com/", // con esta configuración configuras el browsersync
+      "reloadDelay": 0
+    },
+    "liveSassCompile.settings.includeItems": [
+      "./**/sass-styles.scss" // ruta donde lee el código scss
+    ],
+    "liveSassCompile.settings.formats": [{
+      "format": "expanded",
+      "extensionName": ".css",
+      "savePath": "/css" // ruta donde se genera el código scss
+    }],
+    "liveSassCompile.settings.excludeList": [ // rutas excluidas
+      "**/node_modules/**",
+      ".vscode/**"
+    ],
+    "liveSassCompile.settings.generateMap": true, // genera mapa scss
+    "liveSassCompile.settings.autoprefix": [ // autoprefixer
+      "since 2000",
+      "ie >= 6"
+    ],
+  },
+  "extensions": {
+    "recommendations": [ // recomendaciones
+      "hookyqr.beautify",
+      "ritwickdey.live-sass",
+      "jeremyrajan.browsersync",
+      "coenraads.bracket-pair-colorizer",
+      "editorconfig.editorconfig",
+      "dmitrydorofeev.empty-indent",
+      "mrmlnc.vscode-scss",
+      "shardulm94.trailing-spaces",
+      "mblode.twig-language-2",
+      "formulahendry.auto-close-tag",
+      "formulahendry.auto-rename-tag",
+      "christian-kohler.path-intellisense",
+      "charles-sanford.scss-block-comments",
+      "ritwickdey.liveserver"
+    ]
+  }
+}
