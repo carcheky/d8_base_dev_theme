@@ -15,3 +15,5 @@ regions:
   sidebar_first: 'Sidebar first'
   prefooter: Prefooter
   footer: Footer
+dependencies:
+  - layout_section_classes
