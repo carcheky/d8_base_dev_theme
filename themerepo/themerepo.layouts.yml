@@ -1,10 +1,36 @@
-layout_fullwidth:
-  label: 'fullwidth'
-  path: layout-builder
-  template: layout--fullwidth
-  category: 'Columns: 1'
+layout_advanced:
+  label: 'advanced'
+  path: templates/layouts
+  template: layout--advanced
+  category: 'alumnice'
   icon_map:
-    - [fullwidth]
+    - [advanced]
+  classes:
+    width:
+      label: 'Width'
+      multiple: false
+      required: true
+      default: 'container'
+      options:
+        'container': 'Container'
+        'fullwidth': 'Full Width'
+      description: 'Select the width that will be applied to this region.'
+    flex:
+      label: 'Flex'
+      multiple: true
+      required: false
+      options:
+        'flexbox': 'Display: Flex'
+        'flex-row': 'flex-row'
+        'flex-column': 'flex-column'
+        'flex-wrap': 'flex-wrap'
+        'flex-nowrap': 'flex-nowrap'
+        'justify-content-flex-start': 'justify-content-flex-start'
+        'justify-content-flex-end': 'justify-content-flex-end'
+        'justify-content-space-between': 'justify-content-space-between'
+        'justify-content-space-around': 'justify-content-space-around'
+        'justify-content-center': 'justify-content-center'
+      description: 'Select all classes that will be applied to this region.'
   regions:
-    fullwidth:
-      label: fullwidth
+    advanced:
+      label: advanced

@@ -1,0 +1,32 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a one-column layout.
+ *
+ * Available variables:
+ * - content: The content for this layout.
+ * - attributes: HTML attributes for the layout <div>.
+ *
+ * @ingroup themeable
+ */
+#}
+{%
+  set classes = [
+    'layout',
+    'layout--advanced',
+  ]
+%}
+{% if content %}
+  {% if theme_full_width %}
+    <div class="layout-{{uniqueid}}">
+    {% endif %}
+    <div{{attributes.addClass(classes)}}>
+      <div>
+        {{ content.advanced }}
+
+      </div>
+    </div>
+    {% if theme_full_width %}
+    </div>
+  {% endif %}
+{% endif %}
