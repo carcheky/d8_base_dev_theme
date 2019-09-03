@@ -17,23 +17,22 @@
   // }
   "flexbox": {
     "prefix": "flexbox",
-    "body": [
-      "@include flexbox;"
-    ],
+    "body": ["@include flexbox;"],
     "description": "flexbox"
   },
   "flex": {
     "prefix": "flex",
-    "body": [
-      "@include flex($1, $2, $3%);"
-    ],
+    "body": ["@include flex($1, $2, $3%);"],
     "description": "flex"
   },
   "fwrap": {
     "prefix": "fwrap",
-    "body": [
-      "@include flex-wrap($1wrap);"
-    ],
+    "body": ["@include flex-wrap($1wrap);"],
     "description": "flex-wrap"
+  },
+  "fdir": {
+    "prefix": "fdir",
+    "body": ["@include flex-direction($1row);"],
+    "description": "flex-direction"
   }
 }
