@@ -1,6 +1,7 @@
 #!/bin/bash
 # vars
 ORIGINAL_DIR=$(pwd);
+sudo apt install rename -y 2>/dev/null
 
 # functions
 generate_theme(){
@@ -44,5 +45,3 @@ if [ ! -d ../${THEME_NAME} ]; then
   NEW_DIR=$(cd ../${THEME_NAME}; pwd)
   generate_theme
 fi
-
-
