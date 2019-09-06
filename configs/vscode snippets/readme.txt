@@ -1,1 +1,0 @@
-Copy files to %appdata%\Code\User\snippets
