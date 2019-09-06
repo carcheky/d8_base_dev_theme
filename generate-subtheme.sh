@@ -15,10 +15,13 @@ generate_theme(){
   echo "===================================================================="
 
   cd ${NEW_DIR}
+  sudo rm -fr .git
   rename "s/^themerepo/$THEME_NAME/" themerepo*
+
   cd ${NEW_DIR}/config/install/
   rename "s/^themerepo/$THEME_NAME/" themerepo*
-  cd ${NEW_DIR}
+
+  # cd ${NEW_DIR}
   # ls -Rla | grep $THEME_NAME
 
   find ${NEW_DIR} -type f -print0 | xargs -0 sed -i "s/themerepo/$THEME_NAME/g"
