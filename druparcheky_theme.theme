@@ -1,5 +1,9 @@
 <?php
 
+use Drupal\Component\Utility\UrlHelper;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+
+
 /**
  * Implements hook_preprocess().
  */
@@ -8,6 +12,24 @@ function druparcheky_theme_preprocess(&$variables, $hook, $info)
   // THEME SETTINGS
   $variables['theme_full_width'] = theme_get_setting('theme_full_width');
   $variables['theme_dev_class'] = theme_get_setting('theme_dev_class');
+
+
+  // use {{ nid }} var in Twig
+  if ($node = \Drupal::request()->attributes->get('node')) {
+    if (NULL != $node) {
+      if (!is_string($node)) {
+        $variables['nid'] = $node->id();
+      }
+      else {
+        $variables['nid'] = $node;
+      }
+    }
+  }
+
+  // use {{ language }} var in Twig
+  $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+  $variables['language'] = $language;
+
 
   // add BLOCK CLASS
   if (isset($variables['elements'])) {
@@ -44,6 +66,8 @@ function druparcheky_theme_preprocess(&$variables, $hook, $info)
       }
     }
   }
+
+
 }
 
 
