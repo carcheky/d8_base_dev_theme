@@ -1,1 +1,0 @@
-get default templates from \core\themes\classy\templates

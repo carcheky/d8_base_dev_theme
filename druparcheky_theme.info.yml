@@ -3,8 +3,8 @@ type: theme
 description: 'A theme for druparcheky_theme.'
 core: 8.x
 libraries:
-  - centrogarrigues/global-styling
-  - centrogarrigues/global-scripts
+  - druparcheky_theme/global-styling
+  - druparcheky_theme/global-scripts
 base theme: classy
 regions:
   preheader: Preheader
@@ -16,4 +16,5 @@ regions:
   prefooter: Prefooter
   footer: Footer
 # dependencies:
-#   - layout_section_classes
+  # - layout_builder_styles
+  # - layout_section_classes

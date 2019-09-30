@@ -1,21 +1,14 @@
-# d8_base_dev_theme
+# druparcheky_theme
 
-1. Download repo
-2. Delete .git folder
-3. Rename folders & files & file's content
-4. Search & replace "druparcheky_theme" to "yourthemename" in all files
-5. Install && enable [layout_section_classes](https://drupal.org/project/layout_section_classes)
-6. Install && enable your new theme
-7. Launch VS Code from yourthemename.code-workspace
+1. Descarga el repositorio
+2. Borra la carpeta .git
+3. Renombra carpetas, archivos, y contenido de archivos para renombrar el tema (busca&reemplaza themerepo)
+4. Abre Visual Studio Code desde themerepo.code-workspace
+5. Lee el contenido de la carpeta DOCS
 
-or run
 
+
+o si tienes bash, ejecuta (necesita el paquete 'rename' para funcionar)
 ```
 bash generate-subtheme NEW_THEME_NAME
 ```
-
-### Some utils
-
-#### Sass mixins
-
-- https://github.com/7ninjas/scss-mixins

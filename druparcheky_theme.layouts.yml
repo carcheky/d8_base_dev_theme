@@ -1,8 +1,8 @@
 layout_advanced:
   label: 'advanced'
-  path: templates/layouts
+  path: templates/layout-builder
   template: layout--advanced
-  category: 'alumnice'
+  category: 'druparcheky_theme'
   icon_map:
     - [advanced]
   classes:
@@ -15,22 +15,26 @@ layout_advanced:
         'container': 'Container'
         'fullwidth': 'Full Width'
       description: 'Select the width that will be applied to this region.'
-    flex:
-      label: 'Flex'
+    default:
+      label: 'default'
       multiple: true
       required: false
       options:
-        'flexbox': 'Display: Flex'
-        'flex-row': 'flex-row'
-        'flex-column': 'flex-column'
-        'flex-wrap': 'flex-wrap'
-        'flex-nowrap': 'flex-nowrap'
-        'justify-content-flex-start': 'justify-content-flex-start'
-        'justify-content-flex-end': 'justify-content-flex-end'
-        'justify-content-space-between': 'justify-content-space-between'
-        'justify-content-space-around': 'justify-content-space-around'
-        'justify-content-center': 'justify-content-center'
-      description: 'Select all classes that will be applied to this region.'
+        'section1': 'Section 1'
+        'section2': 'Section 2'
+        'section3': 'Section 3'
+        'section4': 'Section 4'
+        'section5': 'Section 5'
+        'section6': 'Section 6'
+        'section7': 'Section 7'
+        'section8': 'Section 8'
+        'section9': 'Section 9'
+    custom:
+      label: 'Custom clases'
+      multiple: true
+      required: false
+      options:
+        'clase_custom': 'clase_custom'
   regions:
     advanced:
       label: advanced

@@ -3,45 +3,16 @@ CUALQUIER MODIFICACION DE ESTE ARCHIVO SERA SOBREESCRITA
 (para modificaciones sin compilador, editar el archivo 'druparcheky_theme/css/no-sass-styles.css') */
 
 // variables
-@import 'variables.scss';
-
-// basic components
-@import 'components/_reset.scss';
+@import '_variables.scss';
 
 // mixins';
 @import 'mixins/_mixin_mediaqueries.scss';
 @import 'mixins/_mixin_fullhide.scss';
-@import 'mixins/_mixin_triangles.scss';
 @import 'mixins/_mixin_flex.scss'; // este mixin requiere @import 'mixins/mixin_mediaqueries';
-@import 'mixins/_mixin_clearfix.scss';
 @import 'mixins/_mixin_font-size-rem.scss';
-@import 'mixins/_mixin_container.scss';
-
-// initial
-@import 'components/_base_fonts.scss';
-@import 'components/_base.scss';
-@import 'components/_container.scss';
-@import 'components/_full-container.scss';
-
-// regions
-@import 'regions/_preheader.scss';
-@import 'regions/_header.scss';
-@import 'regions/_precontent.scss';
-@import 'regions/_content.scss';
-@import 'regions/_postcontent.scss';
-@import 'regions/_prefooter.scss';
-@import 'regions/_footer.scss';
-
-// layouts
-@import 'layouts/_onecol.scss';
-@import 'layouts/_twocol_section.scss';
-@import 'layouts/_threecol_section.scss';
-@import 'layouts/_fourcol_section.scss';
-@import 'layouts/_fullwidth_section.scss';
+// @import 'mixins/_mixin_triangles.scss';
+// @import 'mixins/_mixin_clearfix.scss';
+// @import 'mixins/_mixin_container.scss';
 
 // components
-// @import 'components/_buttons.scss';
-// @import 'components/_text-formatted.scss';
-
-// paginas
-// @import 'paginas/_body-33.scss';
+@import 'components/_base.scss';

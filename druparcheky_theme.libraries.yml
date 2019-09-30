@@ -4,14 +4,11 @@ global-styling:
     base:
       css/sass-styles.css: {}
       css/no-sass-styles.css: {}
-      js/SlickNav/css/slicknav.css: {}
 global-scripts:
   version: VERSION
   js:
-    js/SlickNav/jquery.slicknav.js: {}
-    # https://cdn.jsdelivr.net/npm/pdfjs-dist@2.0.943/build/pdf.min.js: { type: external }
-    http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js: { type: external }
-    js/mobile-menu.js: {}
+    js/global.js: { weight: 0 }
+    js/browserclass.js: { minified: true }
   dependencies:
     - core/drupal
     - core/jquery

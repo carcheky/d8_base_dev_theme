@@ -1,0 +1,9 @@
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 34UW-G1gMaF4H0vE8WPCC4eZi5GEkLgHTYJtzY0n6KI
+id: section_layout_builder_styles
+label: 'section layout_builder_styles'
+classes: layout_builder_styles_section
+type: section
+block_restrictions: {  }

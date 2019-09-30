@@ -1,19 +1,13 @@
 /**
  * @file
  */
-(() => {
-
-  /**
-   * Your js code here
-   */
-
-})();
+(function ($, Drupal, drupalSettings) {
+  Drupal.behaviors.global = {
+    attach: function (context, settings) {
+      /* START */
 
 
-(function ($) {
-
-  /**
-   * Your jquery code here
-   */
-
-}(jQuery));
+      /* END */
+    }
+  };
+})(jQuery, Drupal, drupalSettings);

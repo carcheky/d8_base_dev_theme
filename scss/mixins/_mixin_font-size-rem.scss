@@ -1,4 +1,4 @@
-$global-font-size: 16px;
+$global-font-size: $font-size;
 
 @function countRem($value) {
   $remValue: $value / $global-font-size;

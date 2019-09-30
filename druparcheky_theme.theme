@@ -95,19 +95,6 @@ function druparcheky_theme_preprocess_layout(&$variables)
 
 
 /**
- * Implements hook_preprocess_html().
- */
-function druparcheky_theme_preprocess_html(&$variables)
-{
-  $mobile_menu_class = theme_get_setting('mobile_menu_class');
-  $variables['#attached']['drupalSettings']['druparcheky_theme']['mobile_menu']['mobile_menu_class'] = $mobile_menu_class;
-
-  $mobile_menu_class_place = theme_get_setting('mobile_menu_class_place');
-  $variables['#attached']['drupalSettings']['druparcheky_theme']['mobile_menu']['mobile_menu_class_place'] = $mobile_menu_class_place;
-}
-
-
-/**
  * Implements hook_form_system_theme_settings_alter().
  */
 function druparcheky_theme_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormStateInterface &$form_state, $form_id = NULL)
@@ -116,30 +103,6 @@ function druparcheky_theme_form_system_theme_settings_alter(&$form, \Drupal\Core
   if (isset($form_id)) {
     return;
   }
-
-  $mobile_menu_class = theme_get_setting('mobile_menu_class');
-  $form['mobile_menu_class'] = array(
-    '#type'          => 'textfield',
-    '#title'         => t('Drupal Block Menu'),
-    '#default_value' => theme_get_setting('mobile_menu_class'),
-    '#description'   => t("Set id/class to get menu for mobile."),
-  );
-
-  $mobile_menu_class_place = theme_get_setting('mobile_menu_class_place');
-  $form['mobile_menu_class_place'] = array(
-    '#type'          => 'textfield',
-    '#title'         => t('Class to place mobile menu'),
-    '#default_value' => theme_get_setting('mobile_menu_class_place'),
-    '#description'   => t("Set class for mobile-menu place. (can't be #mobile-menu)"),
-  );
-
-  $theme_full_width = theme_get_setting('theme_full_width');
-  $form['theme_full_width'] = array(
-    '#type'          => 'checkbox',
-    '#title'         => t('full-width layer'),
-    '#default_value' => $theme_full_width,
-    '#description'   => t("if enabled, full-width layer appear in 1|2|3|4 column layers.<br>Can set max-width value in \"scss/_variables.scss\" \$max_width_container var"),
-  );
 
   $theme_dev_class = theme_get_setting('theme_dev_class');
   $form['theme_dev_class'] = array(
@@ -165,3 +128,4 @@ function druparcheky_theme_theme_suggestions_block_alter(array &$suggestions, ar
     }
   }
 }
+//
