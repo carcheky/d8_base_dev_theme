@@ -14,7 +14,10 @@ drush si standard --account-pass=admin --site-name=themerepo -y
 # drush en admin_toolbar layout_builder layout_discovery config_direct_save layout_section_classes -y
 
 # PRUEBA CON LOS DOS MÓDULOS ATIVOS
-drush en admin_toolbar layout_builder layout_discovery config_direct_save layout_section_classes layout_builder_styles -y
+# drush en admin_toolbar layout_builder layout_discovery config_direct_save layout_section_classes layout_builder_styles -y
+
+# PRUEBA CON NINGUNO DE LOS MODULOS
+drush en admin_toolbar layout_builder layout_discovery config_direct_save -y
 
 # drush config-set system.theme default bartik -y
 # drush theme-uninstall themerepo
