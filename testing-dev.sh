@@ -5,7 +5,7 @@ rm -fr ../themerepo
 # drush si standard --account-pass=admin --site-name=themerepo --locale=es -y
 
 # AUTOINSTALACIÓN EN
-drush si standard --account-pass=admin --site-name=themerepo -y
+drush si druparcheky --account-pass=admin --site-name=themerepo -y
 
 # PRUEBA CON MÓDULO LAYOUT_BUILDER_STYLES
 # drush en admin_toolbar layout_builder layout_discovery config_direct_save layout_builder_styles -y
@@ -17,7 +17,7 @@ drush si standard --account-pass=admin --site-name=themerepo -y
 # drush en admin_toolbar layout_builder layout_discovery config_direct_save layout_section_classes layout_builder_styles -y
 
 # PRUEBA CON NINGUNO DE LOS MODULOS
-drush en admin_toolbar layout_builder layout_discovery config_direct_save -y
+# drush en admin_toolbar layout_builder layout_discovery config_direct_save -y
 
 # drush config-set system.theme default bartik -y
 # drush theme-uninstall themerepo
@@ -27,3 +27,4 @@ drush config-set system.theme default themerepo -y
 
 
 cmd.exe /C start http://themerepo:8888/user
+echo "listo."
