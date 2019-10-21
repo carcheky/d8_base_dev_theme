@@ -1,3 +1,10 @@
+// COMO USAR
+// @include triangle($direction, $color(optional), $size(optional));
+/// @param {Direction} $direction - Triangle direction, either `top`, `right`, `bottom` or `left`
+/// @param {Color} $color [currentcolor] - Triangle color
+/// @param {Length} $size [1em] - Triangle size
+
+
 /// Returns the opposite direction of each direction in a list
 /// @author Hugo Giraudel
 /// @param {List} $directions - List of initial directions
@@ -27,8 +34,6 @@
 
   @return $opposite-directions;
 }
-
-
 
 /// Triangle helper mixin
 /// @param {Direction} $direction - Triangle direction, either `top`, `right`, `bottom` or `left`

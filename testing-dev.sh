@@ -1,11 +1,11 @@
 #!/bin/bash
-rm -fr ../themerepo
+rm -fr ../ilutheme
 
 # AUTOINSTALACIÓN ES
-# drush si standard --account-pass=admin --site-name=themerepo --locale=es -y
+# drush si standard --account-pass=admin --site-name=ilutheme --locale=es -y
 
 # AUTOINSTALACIÓN EN
-drush si druparcheky --account-pass=admin --site-name=themerepo -y
+drush si druparcheky --account-pass=admin --site-name=devmodules -y
 
 # PRUEBA CON MÓDULO LAYOUT_BUILDER_STYLES
 # drush en admin_toolbar layout_builder layout_discovery config_direct_save layout_builder_styles -y
@@ -20,11 +20,13 @@ drush si druparcheky --account-pass=admin --site-name=themerepo -y
 # drush en admin_toolbar layout_builder layout_discovery config_direct_save -y
 
 # drush config-set system.theme default bartik -y
-# drush theme-uninstall themerepo
-bash generate-subtheme.sh themerepo
-drush theme-enable themerepo
-drush config-set system.theme default themerepo -y
+# drush theme-uninstall ilutheme
 
+bash generate-subtheme.sh ilutheme
+drush -y en ilutheme
+drush -y theme-enable ilutheme
+drush -y config-set system.theme default ilutheme
+drush -y pmu bartik
 
-cmd.exe /C start http://themerepo:8888/user
+cmd.exe /C start http://devmodules.local/user
 echo "listo."

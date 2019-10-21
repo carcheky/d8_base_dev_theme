@@ -14,6 +14,7 @@
 // $media-lg: "(min-width: 64em)"; // +1024px
 // $media-xl: "(min-width: 75em)"; // +1200px
 // $media-xxl: "(min-width: 100em)"; // +1600px
+
 @mixin media($consulta: md) {
   $media-xxs: "(max-width : 30em)";
   $media-xs: "(min-width : 30em)";

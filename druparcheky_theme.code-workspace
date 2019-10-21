@@ -23,7 +23,7 @@
       "**/node_modules/**",
       ".vscode/**"
     ],
-    "liveSassCompile.settings.generateMap": true, // genera mapa scss
+    "liveSassCompile.settings.generateMap": false, // genera mapa scss
     "liveSassCompile.settings.autoprefix": [ // autoprefixer
       "since 2000",
       "ie >= 6"

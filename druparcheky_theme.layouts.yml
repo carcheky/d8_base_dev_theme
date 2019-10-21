@@ -15,8 +15,8 @@ layout_advanced:
         'container': 'Container'
         'fullwidth': 'Full Width'
       description: 'Select the width that will be applied to this region.'
-    default:
-      label: 'default'
+    section_classes:
+      label: 'Section classes'
       multiple: true
       required: false
       options:
