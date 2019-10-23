@@ -1,0 +1,16 @@
+.js-off-canvas-dialog-open{
+  #drupal-off-canvas option{
+    background-color: #fff;
+    color: black;
+  }
+  #drupal-off-canvas textarea, #drupal-off-canvas select[size], #drupal-off-canvas select[multiple] {
+    height: 250px;
+    width: 100%;
+  }
+  select{
+    width: 100%;
+  }
+  .ui-dialog.ui-dialog-off-canvas{
+    position: absolute;
+  }
+}
