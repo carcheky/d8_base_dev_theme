@@ -1,6 +1,10 @@
+// [start] _mixin_container.scss
+// variables
+@import '../_variables.scss';
+
 @mixin container {
-  width: 1240px;
-  max-width: 100%;
+  max-width: $max_width_container;
+  width: 100%;
   margin: auto;
 }
 
@@ -8,3 +12,5 @@
 .container {
   @include container;
 }
+
+// [end] _mixin_container.scss

@@ -1,4 +1,6 @@
-$global-font-size: $font-size;
+// [start] _mixin_font-size-rem.scss
+// variables
+@import '../_variables.scss';
 
 @function countRem($value) {
   $remValue: $value / $global-font-size;
@@ -9,3 +11,5 @@ $global-font-size: $font-size;
   // font-size: $value;
   font-size: countRem($value); // example: @include font-size(24px);
 }
+
+// [end] _mixin_font-size-rem.scss

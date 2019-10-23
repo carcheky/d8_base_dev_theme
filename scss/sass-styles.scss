@@ -2,20 +2,24 @@
 CUALQUIER MODIFICACION DE ESTE ARCHIVO SERA SOBREESCRITA
 (para modificaciones sin compilador, editar el archivo 'druparcheky_theme/css/no-sass-styles.css') */
 
-// variables
+
+// VARIABLES
 @import '_variables.scss';
 
-// utilities
-@import 'utilities/_normalize.scss';
 
-// mixins';
-@import 'mixins/_mixin_clearfix.scss';
+// MIXINS;
 @import 'mixins/_mixin_container.scss';
-@import 'mixins/_mixin_flex.scss'; // este mixin requiere @import 'mixins/mixin_mediaqueries';
+@import 'mixins/_mixin_flex.scss';
 @import 'mixins/_mixin_font-size-rem.scss';
 @import 'mixins/_mixin_fullhide.scss';
 @import 'mixins/_mixin_mediaqueries.scss';
 @import 'mixins/_mixin_triangles.scss';
 
-// components
-@import 'components/_base.scss';
+
+// UTILITIES
+// @import 'utilities/_normalize.scss';
+// @import 'utilities/_media_query_helper.scss';
+
+
+// COMPONENTS
+// @import 'components/_base.scss';
