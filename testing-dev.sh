@@ -1,17 +1,17 @@
 #!/bin/bash
-drush -y en bartik
-drush -y config-set system.theme default bartik
-drush -y pmu ilutheme
+# drush -y en bartik
+# drush -y config-set system.theme default bartik
+# drush -y pmu ilutheme
 rm -fr ../ilutheme
 
 # composer require drupal/admin_toolbar drupal/config_direct_save drupal/layout_section_classes drupal/layout_builder_styles
 # composer update --with-dependencies
 
 # # AUTOINSTALACIÓN ES
-# drush si druparcheky --account-pass=admin --site-name=devmodules --locale=es -y
+drush si druparcheky --account-pass=admin --site-name=devmodules --locale=es -y
 
 # AUTOINSTALACIÓN EN
-drush si druparcheky --account-pass=admin --site-name=devmodules --locale=en -y
+# drush si druparcheky --account-pass=admin --site-name=devmodules --locale=en -y
 
 # PRUEBA CON MÓDULO LAYOUT_BUILDER_STYLES
 # drush en admin_toolbar layout_builder layout_discovery config_direct_save layout_builder_styles -y
