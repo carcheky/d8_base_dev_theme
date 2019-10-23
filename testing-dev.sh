@@ -1,11 +1,12 @@
 #!/bin/bash
 rm -fr ../ilutheme
+# composer update --with-dependencies
 
 # AUTOINSTALACIÓN ES
 # drush si standard --account-pass=admin --site-name=ilutheme --locale=es -y
 
 # AUTOINSTALACIÓN EN
-drush si druparcheky --account-pass=admin --site-name=devmodules -y
+# drush si druparcheky --account-pass=admin --site-name=devmodules --locale=es -y
 
 # PRUEBA CON MÓDULO LAYOUT_BUILDER_STYLES
 # drush en admin_toolbar layout_builder layout_discovery config_direct_save layout_builder_styles -y
