@@ -33,7 +33,8 @@ function druparcheky_theme_preprocess(&$variables, $hook, $info)
   // * BLOCK CLASSES
   if (isset($variables['elements'])) {
 
-    // Añade la clase "nombre_de_sistema" a los bloques que no estan dentro de layout builder
+    // Añade la clase "nombre_de_sistema" a los bloques
+    // no funciona con los bloques dentro de layout builder
     if (isset($variables['elements']['#id'])) {
       $variables['attributes']['class'][] = $variables['elements']['#id'];
     }
@@ -41,27 +42,30 @@ function druparcheky_theme_preprocess(&$variables, $hook, $info)
 
 
 
-    // if (isset($variables['elements']['content'])) {
-    //   if (isset($variables['elements']['content']['#block_content'])) {
-    //     $variables['attributes']['class'][] = 'block-custom';
-    //     if ($variables['elements']['content']['#block_content']->bundle()) {
-    //       // add class bundle
-    //       $variables['attributes']['class'][] = 'block-bundle-' . $variables['elements']['content']['#block_content']->bundle();
-    //     }
-    //     if ($variables['elements']['content']['#block_content']->id()) {
-    //       // add class id
-    //       $variables['attributes']['class'][] = 'block-id-' . $variables['elements']['content']['#block_content']->id();
-    //     }
-    //     if ($variables['elements']['content']['#block_content']->label()) {
-    //       // add class label
-    //       $variables['attributes']['class'][] = 'block-label-' . $variables['elements']['content']['#block_content']->label();
-    //     }
-    //   }
-    // }
+    if (isset($variables['elements']['content'])) {
+      if (isset($variables['elements']['content']['#block_content'])) {
+
+        // Añadida la clase 'block-custom' para los bloques personalizados.
+        // realmente es igual que la clase 'block-block-content', pero mas intuitiva.
+        // los bloques de sistema no se verán afectados.
+        $variables['attributes']['class'][] = 'block-custom';
 
 
 
-
+        //     if ($variables['elements']['content']['#block_content']->bundle()) {
+        //       // add class bundle
+        //       $variables['attributes']['class'][] = 'block-bundle-' . $variables['elements']['content']['#block_content']->bundle();
+        //     }
+        //     if ($variables['elements']['content']['#block_content']->id()) {
+        //       // add class id
+        //       $variables['attributes']['class'][] = 'block-id-' . $variables['elements']['content']['#block_content']->id();
+        //     }
+        //     if ($variables['elements']['content']['#block_content']->label()) {
+        //       // add class label
+        //       $variables['attributes']['class'][] = 'block-label-' . $variables['elements']['content']['#block_content']->label();
+        //     }
+      }
+    }
   }
 }
 
