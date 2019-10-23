@@ -9,9 +9,8 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
  */
 function druparcheky_theme_preprocess(&$variables, $hook, $info)
 {
-  // THEME SETTINGS
-  $variables['theme_full_width'] = theme_get_setting('theme_full_width');
-  $variables['theme_dev_class'] = theme_get_setting('theme_dev_class');
+  // GET THEME SETTINGS
+  $variables['media_query_helper'] = theme_get_setting('media_query_helper');
 
 
   // use {{ nid }} var in Twig
@@ -19,8 +18,7 @@ function druparcheky_theme_preprocess(&$variables, $hook, $info)
     if (NULL != $node) {
       if (!is_string($node)) {
         $variables['nid'] = $node->id();
-      }
-      else {
+      } else {
         $variables['nid'] = $node;
       }
     }
@@ -31,71 +29,47 @@ function druparcheky_theme_preprocess(&$variables, $hook, $info)
   $variables['language'] = $language;
 
 
-  // add BLOCK CLASS
-  if (isset($variables['elements'])) {
-    if (isset($variables['elements']['#theme'])) {
-      $variables['attributes']['class'][] = $variables['elements']['#theme'];
-    }
-    if (isset($variables['elements']['#base_plugin_id'])) {
-      // add class base_plugin_id
-      $variables['attributes']['class'][] = $variables['elements']['#base_plugin_id'];
-    }
-    if (isset($variables['elements']['#derivative_plugin_id'])) {
-      // add class derivative_plugin_id
-      $variables['attributes']['class'][] = $variables['elements']['#derivative_plugin_id'];
-    }
-    if (isset($variables['elements']['#id'])) {
-      // add class id
-      $variables['attributes']['class'][] = $variables['elements']['#id'];
-    }
-    if (isset($variables['elements']['content'])) {
-      if (isset($variables['elements']['content']['#block_content'])) {
-        $variables['attributes']['class'][] = 'block-custom';
-        if ($variables['elements']['content']['#block_content']->bundle()) {
-          // add class bundle
-          $variables['attributes']['class'][] = 'block-bundle-' . $variables['elements']['content']['#block_content']->bundle();
-        }
-        if ($variables['elements']['content']['#block_content']->id()) {
-          // add class id
-          $variables['attributes']['class'][] = 'block-id-' . $variables['elements']['content']['#block_content']->id();
-        }
-        if ($variables['elements']['content']['#block_content']->label()) {
-          // add class label
-          $variables['attributes']['class'][] = 'block-label-' . $variables['elements']['content']['#block_content']->label();
-        }
-      }
-    }
-  }
-
-
+  // // add BLOCK CLASS
+  // if (isset($variables['elements'])) {
+  //   if (isset($variables['elements']['#theme'])) {
+  //     $variables['attributes']['class'][] = $variables['elements']['#theme'];
+  //   }
+  //   if (isset($variables['elements']['#base_plugin_id'])) {
+  //     // add class base_plugin_id
+  //     $variables['attributes']['class'][] = $variables['elements']['#base_plugin_id'];
+  //   }
+  //   if (isset($variables['elements']['#derivative_plugin_id'])) {
+  //     // add class derivative_plugin_id
+  //     $variables['attributes']['class'][] = $variables['elements']['#derivative_plugin_id'];
+  //   }
+  //   if (isset($variables['elements']['#id'])) {
+  //     // add class id
+  //     $variables['attributes']['class'][] = $variables['elements']['#id'];
+  //   }
+  //   if (isset($variables['elements']['content'])) {
+  //     if (isset($variables['elements']['content']['#block_content'])) {
+  //       $variables['attributes']['class'][] = 'block-custom';
+  //       if ($variables['elements']['content']['#block_content']->bundle()) {
+  //         // add class bundle
+  //         $variables['attributes']['class'][] = 'block-bundle-' . $variables['elements']['content']['#block_content']->bundle();
+  //       }
+  //       if ($variables['elements']['content']['#block_content']->id()) {
+  //         // add class id
+  //         $variables['attributes']['class'][] = 'block-id-' . $variables['elements']['content']['#block_content']->id();
+  //       }
+  //       if ($variables['elements']['content']['#block_content']->label()) {
+  //         // add class label
+  //         $variables['attributes']['class'][] = 'block-label-' . $variables['elements']['content']['#block_content']->label();
+  //       }
+  //     }
+  //   }
+  // }
 }
 
 
 /**
- * Implements hook_preprocess_HOOK() for custom layouts templates.
- *
- */
-function druparcheky_theme_preprocess_layout(&$variables)
-{
-  $variables['attributes']['class'][] = 'layout-custom';
-  if (isset($variables['content'])) {
-    foreach ($variables['content'] as $key => $value) {
-      // exclusive class
-      if (isset($variables['content'][$key])) {
-        foreach ($variables['content'][$key] as $key2 => $value2) {
-          $variables['attributes']['class'][] = 'layout-' . $key2;
-          $variables['uniqueid'] = $key2;
-          break;
-        }
-      }
-      break;
-    }
-  }
-} /* END druparcheky_theme_preprocess_layout */
-
-
-/**
  * Implements hook_form_system_theme_settings_alter().
+ *
  */
 function druparcheky_theme_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormStateInterface &$form_state, $form_id = NULL)
 {
@@ -104,14 +78,37 @@ function druparcheky_theme_form_system_theme_settings_alter(&$form, \Drupal\Core
     return;
   }
 
-  $theme_dev_class = theme_get_setting('theme_dev_class');
-  $form['theme_dev_class'] = array(
+  $media_query_helper = theme_get_setting('media_query_helper');
+  $form['media_query_helper'] = array(
     '#type'          => 'checkbox',
-    '#title'         => t('Dev Resolution Block'),
-    '#default_value' => $theme_dev_class,
-    '#description'   => t("if enabled, helper block will show"),
+    '#title'         => t('media_query_helper classes'),
+    '#default_value' => $media_query_helper,
+    '#description'   => t("if enabled, media_query_helper block will show"),
   );
 }
+// /**
+//  * Implements hook_preprocess_HOOK() for custom layouts templates.
+//  *
+//  */
+// function druparcheky_theme_preprocess_layout(&$variables)
+// {
+//   $variables['attributes']['class'][] = 'layout-custom';
+//   if (isset($variables['content'])) {
+//     foreach ($variables['content'] as $key => $value) {
+//       // exclusive class
+//       if (isset($variables['content'][$key])) {
+//         foreach ($variables['content'][$key] as $key2 => $value2) {
+//           $variables['attributes']['class'][] = 'layout-' . $key2;
+//           $variables['uniqueid'] = $key2;
+//           break;
+//         }
+//       }
+//       break;
+//     }
+//   }
+// } /* END druparcheky_theme_preprocess_layout */
+
+
 
 
 /**
