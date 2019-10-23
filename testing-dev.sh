@@ -66,5 +66,5 @@ drush cron
 # zero_install_es
 drush cr
 
-cmd.exe /C start http://devmodules.local
+# cmd.exe /C start http://devmodules.local
 echo "listo."

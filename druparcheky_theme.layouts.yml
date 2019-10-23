@@ -8,27 +8,27 @@ layout_advanced:
   classes:
     width:
       label: 'Width'
+      description: 'Select the width that will be applied to this region.'
       multiple: false
-      required: true
+      required: false
       default: 'container'
       options:
-        'container': 'Container'
-        'fullwidth': 'Full Width'
-      description: 'Select the width that will be applied to this region.'
+        'container': 'container'
+        'fullwidth': 'fullwidth'
     section_classes:
       label: 'Section classes'
       multiple: true
       required: false
       options:
-        'section1': 'Section 1'
-        'section2': 'Section 2'
-        'section3': 'Section 3'
-        'section4': 'Section 4'
-        'section5': 'Section 5'
-        'section6': 'Section 6'
-        'section7': 'Section 7'
-        'section8': 'Section 8'
-        'section9': 'Section 9'
+        'section1': 'section1'
+        'section2': 'section2'
+        'section3': 'section3'
+        'section4': 'section4'
+        'section5': 'section5'
+        'section6': 'section6'
+        'section7': 'section7'
+        'section8': 'section8'
+        'section9': 'section9'
     custom:
       label: 'Custom clases'
       multiple: true
