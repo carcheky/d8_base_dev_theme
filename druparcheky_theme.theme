@@ -61,10 +61,10 @@ function druparcheky_theme_preprocess(&$variables, $hook, $info)
         }
 
 
-        if ($variables['elements']['content']['#block_content']->label()) {
-          // add class label
-          $variables['attributes']['class'][] = 'block-label-' . $variables['elements']['content']['#block_content']->label();
-        }
+        // if ($variables['elements']['content']['#block_content']->label()) {
+        //   // add class label
+        //   $variables['attributes']['class'][] = 'block-label-' . $variables['elements']['content']['#block_content']->label();
+        // }
       }
     }
   }
