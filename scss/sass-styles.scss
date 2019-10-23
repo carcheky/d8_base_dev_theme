@@ -3,23 +3,26 @@ CUALQUIER MODIFICACION DE ESTE ARCHIVO SERA SOBREESCRITA
 (para modificaciones sin compilador, editar el archivo 'druparcheky_theme/css/no-sass-styles.css') */
 
 
-// VARIABLES
-@import '_variables.scss';
+// VARIABLES:
+@import '_variables.scss'; //! Este archivo es vital, no se puede borrar, sí se pueden añadir variables
 
 
-// MIXINS;
-@import 'mixins/_mixin_container.scss';
-@import 'mixins/_mixin_flex.scss';
-@import 'mixins/_mixin_font-size-rem.scss';
-@import 'mixins/_mixin_fullhide.scss';
-@import 'mixins/_mixin_mediaqueries.scss';
-@import 'mixins/_mixin_triangles.scss';
+// MIXINS:
+// Estos mixins no generan código, sólo aportan funcionalidad para desarrollar,
+// por lo que no es necesario activarlos o desactivarlos ya que no se reflejarán
+// en el css final si no se usan.
+@import 'mixins/_mixin_container.scss'; //! crea la clase .container para reutilizar en el sitio. usa la variable $max_width_container
+@import 'mixins/_mixin_flex.scss'; // mixin para agilizar el desarrollo con flex
+@import 'mixins/_mixin_font-size-rem.scss'; //! usa la variable $font-size
+@import 'mixins/_mixin_fullhide.scss'; // genera las clases .fullhide, .element-invisible, .sr-only y .sr-only-focusable
+@import 'mixins/_mixin_mediaqueries.scss'; // mixin para agilizar el desarrollo con mediaqueries
+@import 'mixins/_mixin_triangles.scss'; // mixin para agilizar el desarrollo de triangulos en el contenido
 
 
 // UTILITIES
-// @import 'utilities/_normalize.scss';
-// @import 'utilities/_media_query_helper.scss';
+// Estos archivos aportan estilos básicos
+@import 'utilities/_normalize.scss'; //! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css
 
 
 // COMPONENTS
-// @import 'components/_base.scss';
+@import 'components/_base.scss';

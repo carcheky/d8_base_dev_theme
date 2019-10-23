@@ -12,7 +12,7 @@
       "reloadDelay": 0
     },
     "liveSassCompile.settings.includeItems": [
-      "./**/sass-styles.scss" // ruta donde lee el código scss
+      "./scss/*.scss" // ruta donde lee el código scss
     ],
     "liveSassCompile.settings.formats": [{
       "format": "expanded",

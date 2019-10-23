@@ -3,7 +3,7 @@
 @import '../_variables.scss';
 
 @function countRem($value) {
-  $remValue: $value / $global-font-size;
+  $remValue: $value / $font-size;
   @return $remValue * 1rem;
 }
 
