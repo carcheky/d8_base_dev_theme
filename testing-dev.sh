@@ -34,9 +34,9 @@
 # bash generate-subtheme.sh ilutheme
 # drush -y en ilutheme
 # drush -y config-set system.theme default ilutheme
-# drush -y pmu bartik
 # drush -y en druparcheky_theme
 # drush -y config-set system.theme default druparcheky_theme
+# drush -y pmu bartik
 drush cr
 
 cmd.exe /C start http://devmodules.local

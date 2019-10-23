@@ -30,10 +30,11 @@
     ],
     "saveAndRun": {
       "commands": [{
-        "match": "\\.*$",
+        "match": ".*",
         "isShellCommand": true,
         "cmd": "./testing-dev.sh",
-        "wsl": true
+        "wsl": true,
+        "useShortcut": true,
       }],
     }
   },
