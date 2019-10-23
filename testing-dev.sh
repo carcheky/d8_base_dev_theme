@@ -8,7 +8,7 @@ rm -fr ../ilutheme
 composer update --with-dependencies
 
 # AUTOINSTALACIÓN ES
-drush si standard --account-pass=admin --site-name=devmodules --locale=es -y
+drush si druparcheky --account-pass=admin --site-name=devmodules --locale=es -y
 
 # AUTOINSTALACIÓN EN
 # drush si druparcheky --account-pass=admin --site-name=devmodules --locale=en -y
