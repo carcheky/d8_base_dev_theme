@@ -6,12 +6,14 @@
  */
 function druparcheky_theme_preprocess(&$variables, $hook, $info)
 {
-  // GET THEME SETTINGS
+  // * GET THEME SETTINGS
   $variables['media_query_helper'] = theme_get_setting('media_query_helper');
 
 
-  // use {{ nid }} var in Twig
+  // * TWIG VARS
+  // {{ nid }}
   if ($node = \Drupal::request()->attributes->get('node')) {
+    // create {{ nid }} var for Twig
     if (NULL != $node) {
       if (!is_string($node)) {
         $variables['nid'] = $node->id();
@@ -21,46 +23,46 @@ function druparcheky_theme_preprocess(&$variables, $hook, $info)
     }
   }
 
-  // use {{ language }} var in Twig
-  $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
-  $variables['language'] = $language;
+  // {{ language }}
+  if ($language = \Drupal::languageManager()->getCurrentLanguage()->getId()) {
+    // create {{ language }} var for Twig
+    $variables['language'] = $language;
+  }
 
 
-  // // add BLOCK CLASS
-  // if (isset($variables['elements'])) {
-  //   if (isset($variables['elements']['#theme'])) {
-  //     $variables['attributes']['class'][] = $variables['elements']['#theme'];
-  //   }
-  //   if (isset($variables['elements']['#base_plugin_id'])) {
-  //     // add class base_plugin_id
-  //     $variables['attributes']['class'][] = $variables['elements']['#base_plugin_id'];
-  //   }
-  //   if (isset($variables['elements']['#derivative_plugin_id'])) {
-  //     // add class derivative_plugin_id
-  //     $variables['attributes']['class'][] = $variables['elements']['#derivative_plugin_id'];
-  //   }
-  //   if (isset($variables['elements']['#id'])) {
-  //     // add class id
-  //     $variables['attributes']['class'][] = $variables['elements']['#id'];
-  //   }
-  //   if (isset($variables['elements']['content'])) {
-  //     if (isset($variables['elements']['content']['#block_content'])) {
-  //       $variables['attributes']['class'][] = 'block-custom';
-  //       if ($variables['elements']['content']['#block_content']->bundle()) {
-  //         // add class bundle
-  //         $variables['attributes']['class'][] = 'block-bundle-' . $variables['elements']['content']['#block_content']->bundle();
-  //       }
-  //       if ($variables['elements']['content']['#block_content']->id()) {
-  //         // add class id
-  //         $variables['attributes']['class'][] = 'block-id-' . $variables['elements']['content']['#block_content']->id();
-  //       }
-  //       if ($variables['elements']['content']['#block_content']->label()) {
-  //         // add class label
-  //         $variables['attributes']['class'][] = 'block-label-' . $variables['elements']['content']['#block_content']->label();
-  //       }
-  //     }
-  //   }
-  // }
+  // * BLOCK CLASSES
+  if (isset($variables['elements'])) {
+
+    // Añade la clase "nombre_de_sistema" a los bloques que no estan dentro de layout builder
+    if (isset($variables['elements']['#id'])) {
+      $variables['attributes']['class'][] = $variables['elements']['#id'];
+    }
+
+
+
+
+    // if (isset($variables['elements']['content'])) {
+    //   if (isset($variables['elements']['content']['#block_content'])) {
+    //     $variables['attributes']['class'][] = 'block-custom';
+    //     if ($variables['elements']['content']['#block_content']->bundle()) {
+    //       // add class bundle
+    //       $variables['attributes']['class'][] = 'block-bundle-' . $variables['elements']['content']['#block_content']->bundle();
+    //     }
+    //     if ($variables['elements']['content']['#block_content']->id()) {
+    //       // add class id
+    //       $variables['attributes']['class'][] = 'block-id-' . $variables['elements']['content']['#block_content']->id();
+    //     }
+    //     if ($variables['elements']['content']['#block_content']->label()) {
+    //       // add class label
+    //       $variables['attributes']['class'][] = 'block-label-' . $variables['elements']['content']['#block_content']->label();
+    //     }
+    //   }
+    // }
+
+
+
+
+  }
 }
 
 

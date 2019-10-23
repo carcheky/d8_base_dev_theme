@@ -28,6 +28,14 @@
       "since 2000",
       "ie >= 6"
     ],
+    "saveAndRun": {
+      "commands": [{
+        "match": "\\.*$",
+        "isShellCommand": true,
+        "cmd": "./testing-dev.sh",
+        "wsl": true
+      }],
+    }
   },
   "extensions": {
     "recommendations": [ // recomendaciones

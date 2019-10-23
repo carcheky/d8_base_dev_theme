@@ -1,14 +1,11 @@
 #!/bin/bash
-# drush -y en bartik
-# drush -y config-set system.theme default bartik
-# drush -y pmu ilutheme
-rm -fr ../ilutheme
+
 
 # composer require drupal/admin_toolbar drupal/config_direct_save drupal/layout_section_classes drupal/layout_builder_styles
 # composer update --with-dependencies
 
 # # AUTOINSTALACIÓN ES
-drush si druparcheky --account-pass=admin --site-name=devmodules --locale=es -y
+# drush si druparcheky --account-pass=admin --site-name=devmodules --locale=es -yvvv
 
 # AUTOINSTALACIÓN EN
 # drush si druparcheky --account-pass=admin --site-name=devmodules --locale=en -y
@@ -28,12 +25,19 @@ drush si druparcheky --account-pass=admin --site-name=devmodules --locale=es -y
 # drush config-set system.theme default bartik -y
 # drush theme-uninstall ilutheme
 
-bash generate-subtheme.sh ilutheme
-drush cr
-drush cron
-drush -y en ilutheme
-drush -y config-set system.theme default ilutheme
-drush -y pmu bartik
 
-cmd.exe /C start http://devmodules.local/user
+# drush -y en bartik
+# drush -y config-set system.theme default bartik
+# drush -y pmu ilutheme
+# rm -fr ../ilutheme
+# drush cr
+# bash generate-subtheme.sh ilutheme
+# drush -y en ilutheme
+# drush -y config-set system.theme default ilutheme
+# drush -y pmu bartik
+# drush -y en druparcheky_theme
+# drush -y config-set system.theme default druparcheky_theme
+drush cr
+
+cmd.exe /C start http://devmodules.local
 echo "listo."
