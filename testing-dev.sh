@@ -1,18 +1,17 @@
 #!/bin/bash
 drush -y en bartik
-drush -y theme-enable bartik
 drush -y config-set system.theme default bartik
 drush -y pmu ilutheme
 rm -fr ../ilutheme
 
 
-composer update --with-dependencies
+# composer update --with-dependencies
 
 # AUTOINSTALACIÓN ES
 # drush si standard --account-pass=admin --site-name=ilutheme --locale=es -y
 
 # AUTOINSTALACIÓN EN
-drush si druparcheky --account-pass=admin --site-name=devmodules --locale=en -y
+# drush si druparcheky --account-pass=admin --site-name=devmodules --locale=en -y
 
 # PRUEBA CON MÓDULO LAYOUT_BUILDER_STYLES
 # drush en admin_toolbar layout_builder layout_discovery config_direct_save layout_builder_styles -y
@@ -33,7 +32,6 @@ bash generate-subtheme.sh ilutheme
 drush cr
 drush cron
 drush -y en ilutheme
-drush -y theme-enable ilutheme
 drush -y config-set system.theme default ilutheme
 drush -y pmu bartik
 
