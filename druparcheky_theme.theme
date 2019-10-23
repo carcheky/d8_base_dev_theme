@@ -45,13 +45,13 @@ function druparcheky_theme_preprocess(&$variables, $hook, $info)
       if (isset($variables['elements']['content']['#block_content'])) {
 
         if ($variables['elements']['content']['#block_content']->bundle()) {
-          // Añade la clase 'custom-block' para los bloques personalizados.
+          // Añade la clase 'block-custom' para los bloques personalizados.
           // realmente es igual que la clase 'block-block-content', pero mas intuitiva.
           // los bloques de sistema no se verán afectados.
-          $variables['attributes']['class'][] = 'custom-block';
-          // Añade la clase '{{tipo_de_bloque}}' para los bloques personalizados.
+          $variables['attributes']['class'][] = 'block-custom';
+          // Añade la clase 'block-custom-{{tipo_de_bloque}}' para los bloques personalizados.
           // los bloques de sistema no se verán afectados.
-          $variables['attributes']['class'][] = $variables['elements']['content']['#block_content']->bundle();
+          $variables['attributes']['class'][] = 'block-custom-' . $variables['elements']['content']['#block_content']->bundle();
         }
 
         if ($variables['elements']['content']['#block_content']->id()) {
@@ -59,11 +59,6 @@ function druparcheky_theme_preprocess(&$variables, $hook, $info)
           $variables['attributes']['class'][] = 'block-id-' . $variables['elements']['content']['#block_content']->id();
         }
 
-
-        // if ($variables['elements']['content']['#block_content']->label()) {
-        //   // add class label
-        //   $variables['attributes']['class'][] = 'block-label-' . $variables['elements']['content']['#block_content']->label();
-        // }
       }
     }
   }
