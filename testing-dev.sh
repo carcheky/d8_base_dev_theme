@@ -4,7 +4,7 @@ drush -y config-set system.theme default bartik
 drush -y pmu ilutheme
 rm -fr ../ilutheme
 
-composer require drupal/admin_toolbar drupal/layout_builder drupal/layout_discovery drupal/config_direct_save drupal/layout_section_classes drupal/layout_builder_styles
+# composer require drupal/admin_toolbar drupal/config_direct_save drupal/layout_section_classes drupal/layout_builder_styles
 # composer update --with-dependencies
 
 # # AUTOINSTALACIÓN ES
