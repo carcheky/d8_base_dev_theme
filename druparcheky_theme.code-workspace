@@ -8,7 +8,7 @@
   }],
   "settings": {
     "browsersync.options": {
-      "proxy": "http://druparcheky_theme.e-fti.com/", // con esta configuración configuras el browsersync
+      "proxy": "http://devmodules.local/", // con esta configuración configuras el browsersync
       "reloadDelay": 0
     },
     "liveSassCompile.settings.includeItems": [

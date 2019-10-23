@@ -27,7 +27,7 @@ CUALQUIER MODIFICACION DE ESTE ARCHIVO SERA SOBREESCRITA
 }
 
 
-.sr-only {
+.element-invisible-focusable {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -39,8 +39,8 @@ CUALQUIER MODIFICACION DE ESTE ARCHIVO SERA SOBREESCRITA
 }
 
 
-.sr-only-focusable:active,
-.sr-only-focusable:focus {
+.element-invisible-focusable:active,
+.element-invisible-focusable:focus {
   position: static;
   width: auto;
   height: auto;
@@ -404,6 +404,10 @@ template {
 img {
   max-width: 100%;
   height: auto;
+}
+
+.site-logo img {
+  max-width: 100px;
 }
 
 /* [start] /components/_base.scss */
