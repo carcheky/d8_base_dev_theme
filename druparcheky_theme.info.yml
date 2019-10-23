@@ -7,16 +7,17 @@ libraries:
   - druparcheky_theme/global-scripts
 base theme: classy
 regions:
-  header: header # Items for the header region.
-  primary_menu: primary_menu # Items for the primary menu region.
-  secondary_menu: secondary_menu # Items for the secondary menu region.
-  breadcrumb: breadcrumb # Items for the breadcrumb region.
-  highlighted: highlighted # Items for the highlighted content region.
-  help: help # Dynamic help text, mostly for admin pages.
-  content: content # The main content of the current page.
-  sidebar_first: sidebar_first # Items for the first sidebar.
-  sidebar_second: sidebar_second # Items for the second sidebar.
-  footer: footer # Items for the footer region.
+  header: Header # Items for the header region.
+  primary_menu: Primary menu # Items for the primary menu region.
+  secondary_menu: Secondary menu # Items for the secondary menu region.
+  breadcrumb: Breadcrumb # Items for the breadcrumb region.
+  highlighted: Highlighted # Items for the highlighted content region.
+  help: Help # Dynamic help text, mostly for admin pages.
+  content: Content # The main content of the current page.
+  sidebar_first: Sidebar first # Items for the first sidebar.
+  sidebar_second: Sidebar second # Items for the second sidebar.
+  footer: Footer # Items for the footer region.
+  hidden_blocks: Hidden blocks # Items for the hidden blocks region.
 # dependencies:
   # - layout_builder_styles
   # - layout_section_classes
