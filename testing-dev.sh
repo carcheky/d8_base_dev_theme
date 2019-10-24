@@ -72,8 +72,8 @@ enable_druparcheky_theme() {
 
 # composer_require
 # zero_install_en
-zero_install_es
-enable_modules
+# zero_install_es
+# enable_modules
 enable_bartik
 enable_druparcheky_theme
 # enable_ilutheme
