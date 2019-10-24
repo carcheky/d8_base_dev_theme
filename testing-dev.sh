@@ -29,7 +29,8 @@ composer_require() {
   sudo rm -fr /mnt/c/wsl/sites/devmodules/web/core
   sudo rm -fr /mnt/c/wsl/sites/devmodules/web/*/contrib
   sudo rm -fr /mnt/c/wsl/sites/devmodules/web/composer.lock
-  composer require drupal/admin_toolbar drupal/config_direct_save drupal/config_split drupal/layout_section_classes drupal/layout_builder_styles drupal/module_filter drupal/config_split drupal/fontawesome drupal/devel
+
+  composer require drupal/admin_toolbar drupal/config_direct_save drupal/config_split drupal/layout_section_classes drupal/layout_builder_styles drupal/module_filter drupal/fontawesome drupal/devel
   composer update --with-dependencies
 }
 zero_install_en() {
@@ -50,6 +51,7 @@ enable_bartik() {
 }
 
 enable_ilutheme() {
+  bash generate-subtheme.sh ilutheme
   drush -y en ilutheme
   drush -y config-set system.theme default ilutheme
   drush -y pmu druparcheky_theme bartik
@@ -61,7 +63,7 @@ enable_druparcheky_theme() {
   drush -y pmu ilutheme bartik
 }
 
-composer_require
+# composer_require
 
 # zero_install_en
 zero_install_es
