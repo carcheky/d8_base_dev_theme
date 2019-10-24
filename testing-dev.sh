@@ -40,8 +40,8 @@ zero_install_es() {
 }
 enable_modules() {
   drush -y en admin_toolbar devel module_filter fontawesome
-  # drush -y en config_direct_save config_split
-  # drush -y en layout_section_classes layout_builder_styles
+  drush -y en config_direct_save config_split
+  drush -y en layout_section_classes layout_builder_styles
 }
 enable_bartik() {
   drush -y en bartik
@@ -61,15 +61,15 @@ enable_druparcheky_theme() {
   drush -y pmu ilutheme bartik
 }
 
-# composer_require
+composer_require
 
-zero_install_en
-# zero_install_es
+# zero_install_en
+zero_install_es
 
 enable_modules
 
-# enable_bartik
-# enable_druparcheky_theme
+enable_bartik
+enable_druparcheky_theme
 # enable_ilutheme
 
 drush cr
