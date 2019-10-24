@@ -1,14 +1,12 @@
 <?php
 
 /**
- * Implements hook_preprocess().
- */
+ *  * Implements hook_preprocess().
+ *  */
 function druparcheky_theme_preprocess(&$variables, $hook, $info)
 {
   // * GET THEME SETTINGS
   $variables['media_query_helper'] = theme_get_setting('media_query_helper');
-
-
   // * TWIG VARS
   // {{ nid }}
   if ($node = \Drupal::request()->attributes->get('node')) {
@@ -21,29 +19,20 @@ function druparcheky_theme_preprocess(&$variables, $hook, $info)
       }
     }
   }
-
   // {{ language }}
   if ($language = \Drupal::languageManager()->getCurrentLanguage()->getId()) {
     // create {{ language }} var for Twig
     $variables['language'] = $language;
   }
-
-
   // * BLOCK CLASSES
   if (isset($variables['elements'])) {
-
     // Añade la clase "nombre_de_sistema" a los bloques
     // no funciona con los bloques dentro de layout builder
     if (isset($variables['elements']['#id'])) {
       $variables['attributes']['class'][] = $variables['elements']['#id'];
     }
-
-
-
-
     if (isset($variables['elements']['content'])) {
       if (isset($variables['elements']['content']['#block_content'])) {
-
         if ($variables['elements']['content']['#block_content']->bundle()) {
           // Añade la clase 'block-custom' para los bloques personalizados.
           // realmente es igual que la clase 'block-block-content', pero mas intuitiva.
@@ -53,7 +42,6 @@ function druparcheky_theme_preprocess(&$variables, $hook, $info)
           // los bloques de sistema no se verán afectados.
           $variables['attributes']['class'][] = 'block-custom-' . $variables['elements']['content']['#block_content']->bundle();
         }
-
         if ($variables['elements']['content']['#block_content']->id()) {
           // Añade la clase 'block-id-{{id}}' a bloques personalizados
           $variables['attributes']['class'][] = 'block-id-' . $variables['elements']['content']['#block_content']->id();
@@ -62,8 +50,6 @@ function druparcheky_theme_preprocess(&$variables, $hook, $info)
     }
   }
 }
-
-
 /**
  * Implements hook_form_system_theme_settings_alter().
  *
@@ -74,7 +60,6 @@ function druparcheky_theme_form_system_theme_settings_alter(&$form, \Drupal\Core
   if (isset($form_id)) {
     return;
   }
-
   $media_query_helper = theme_get_setting('media_query_helper');
   $form['media_query_helper'] = array(
     '#type'          => 'checkbox',
@@ -104,10 +89,6 @@ function druparcheky_theme_form_system_theme_settings_alter(&$form, \Drupal\Core
 //     }
 //   }
 // } /* END druparcheky_theme_preprocess_layout */
-
-
-
-
 /**
  * Implements hook_theme_suggestions_HOOK_alter() for block types templates.
  * @param array $suggestions
