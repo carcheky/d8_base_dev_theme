@@ -1,10 +1,10 @@
 #!/bin/bash
 # vars
-ORIGINAL_DIR=$(pwd);
+ORIGINAL_DIR=$(pwd)
 sudo apt install rename -y 2>/dev/null
 
 # functions
-generate_theme(){
+generate_theme() {
 
   # echo ${ORIGINAL_DIR}
   echo "===================================================================="
@@ -30,21 +30,25 @@ generate_theme(){
 }
 # logic
 
-if [ ! $1 ] ; then
+if [ ! $1 ]; then
   echo "nombre del tema:"
   read THEME_NAME
   THEME_NAME=${THEME_NAME}
 fi
 
-if [ $1 ] ; then
+if [ $1 ]; then
   THEME_NAME=${1}
 fi
 if [ -d ../${THEME_NAME} ]; then
-  echo "=> ya existe ${THEME_NAME}"
+  echo "=> ya existe ${THEME_NAME}, borrando..."
+  rm -fr ../${THEME_NAME}
 fi
 if [ ! -d ../${THEME_NAME} ]; then
   echo "=> creando ${THEME_NAME}"
   cp -fr ${ORIGINAL_DIR} ../${THEME_NAME}
-  NEW_DIR=$(cd ../${THEME_NAME}; pwd)
+  NEW_DIR=$(
+    cd ../${THEME_NAME}
+    pwd
+  )
   generate_theme
 fi
