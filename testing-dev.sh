@@ -69,15 +69,15 @@ enable_druparcheky_theme() {
 }
 
 #! LOGIC
-
+rm -fr /mnt/c/wsl/sites/devmodules/sites/default/files/php
 # composer_require
 # zero_install_en
 # zero_install_es
 # enable_modules
-enable_bartik
-enable_druparcheky_theme
+# enable_bartik
+# enable_druparcheky_theme
 # enable_ilutheme
 drush cr
-drush cron 2>/dev/null
+# drush cron 2>/dev/null
 cmd.exe /C start http://devmodules.local
 echo "listo."
