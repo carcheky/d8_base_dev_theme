@@ -50,6 +50,8 @@ function druparcheky_theme_preprocess(&$variables, $hook, $info)
     }
   }
 }
+
+
 /**
  * Implements hook_form_system_theme_settings_alter().
  *
@@ -68,6 +70,8 @@ function druparcheky_theme_form_system_theme_settings_alter(&$form, \Drupal\Core
     '#description'   => t("if enabled, media_query_helper block will show"),
   );
 }
+
+
 // /**
 //  * Implements hook_preprocess_HOOK() for custom layouts templates.
 //  *
@@ -89,6 +93,8 @@ function druparcheky_theme_form_system_theme_settings_alter(&$form, \Drupal\Core
 //     }
 //   }
 // } /* END druparcheky_theme_preprocess_layout */
+
+
 /**
  * Implements hook_theme_suggestions_HOOK_alter() for block types templates.
  * @param array $suggestions
