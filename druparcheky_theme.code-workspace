@@ -40,6 +40,11 @@
   },
   "extensions": {
     "recommendations": [ // recomendaciones
+      "mblode.twig-language-2",
+      "tsega.drupal-8-twig-snippets",
+      "marcostazi.vs-code-drupal",
+      "tsega.drupal-8-javascript-snippets",
+      "dssiqueira.drupal-8-snippets",
       "hookyqr.beautify",
       "ritwickdey.live-sass",
       "jeremyrajan.browsersync",
@@ -48,12 +53,18 @@
       "dmitrydorofeev.empty-indent",
       "mrmlnc.vscode-scss",
       "shardulm94.trailing-spaces",
-      "mblode.twig-language-2",
       "formulahendry.auto-close-tag",
       "formulahendry.auto-rename-tag",
       "christian-kohler.path-intellisense",
       "charles-sanford.scss-block-comments",
-      "ritwickdey.liveserver"
+      "ritwickdey.liveserver",
+      "felipecaputo.git-project-manager",
+      "eamodio.gitlens",
+      "donjayamanne.githistory",
+      "raiscui.save-and-run-wsl",
+      "dbaeumer.vscode-eslint",
+      "bmewburn.vscode-intelephense-client",
+      "aaron-bond.better-comments"
     ]
   }
 }
