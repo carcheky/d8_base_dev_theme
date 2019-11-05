@@ -8,6 +8,11 @@
 4. Abre Visual Studio Code desde druparcheky_theme.code-workspace
 5. Lee el contenido de la carpeta DOCS
 
+## VARIABLES TWIG DISPONIBLES
+
+- {{ language }} - Devuelve el código de idioma correspondiente. Por defecto añadico como clase al body como 'lang-es'
+- {{ nid }} - Devuelve el id del nodo. Por defecto aplicado al body como 'page-1'
+
 ## ARCHIVOS MODIFICABLES
 
 - Carpeta SCSS (archivos css compilados)
