@@ -76,8 +76,8 @@ rm -fr /mnt/c/wsl/sites/devmodules/sites/default/files/php
 # zero_install_es
 # enable_modules
 enable_bartik
-# enable_druparcheky_theme
-enable_ilutheme
+enable_druparcheky_theme
+# enable_ilutheme
 drush cr
 # drush cron 2>/dev/null
 cmd.exe /C start http://devmodules.local

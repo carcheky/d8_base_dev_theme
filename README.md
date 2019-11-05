@@ -7,6 +7,7 @@
 3. Renombra carpetas, archivos, y contenido de archivos para renombrar el tema (busca&reemplaza druparcheky_theme)
 4. Abre Visual Studio Code desde druparcheky_theme.code-workspace
 5. Lee el contenido de la carpeta DOCS
+6. BORRA LOS SCRIPTS ANTES DE SUBIR A PRE/PROD !!!
 
 ## VARIABLES TWIG DISPONIBLES
 
