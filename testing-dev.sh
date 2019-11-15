@@ -1,28 +1,4 @@
 #!/bin/bash
-# composer update --with-dependencies
-# AUTOINSTALACIÓN ES
-# drush si druparcheky --account-pass=admin --site-name=devmodules --locale=es -yvvv
-# AUTOINSTALACIÓN EN
-# drush si druparcheky --account-pass=admin --site-name=devmodules --locale=en -y
-# PRUEBA CON MÓDULO LAYOUT_BUILDER_STYLES
-# drush en admin_toolbar layout_builder layout_discovery config_direct_save layout_builder_styles -y
-# PRUEBA CON MÓDULO LAYOUT_SECTION_CLASSES
-# drush en admin_toolbar layout_builder layout_discovery config_direct_save layout_section_classes -y
-# PRUEBA CON LOS DOS MÓDULOS ATIVOS
-# drush en admin_toolbar layout_builder layout_discovery config_direct_save layout_section_classes layout_builder_styles -y
-# PRUEBA CON NINGUNO DE LOS MODULOS
-# drush en admin_toolbar layout_builder layout_discovery config_direct_save -y
-# drush config-set system.theme default bartik -y
-# drush theme-uninstall ilutheme
-# drush -y en bartik
-# drush -y config-set system.theme default bartik
-# # drush -y pmu ilutheme
-# # rm -fr ../ilutheme
-# # drush cr
-# # bash generate-subtheme.sh ilutheme
-# # drush -y en ilutheme
-# # drush -y config-set system.theme default ilutheme
-# drush -y pmu druparcheky_theme
 
 #! FUNCTIONS
 
@@ -43,6 +19,11 @@ zero_install_es() {
   drush -y si druparcheky --account-pass=admin --site-name=devmodules --locale=es
 }
 
+drimport() {
+  drush sql-drop -y
+  drush sql-cli -v <database.sql
+}
+
 enable_modules() {
   drush -y en admin_toolbar devel module_filter fontawesome
   drush -y en config_direct_save config_split
@@ -52,16 +33,14 @@ enable_modules() {
 enable_bartik() {
   drush -y en bartik
   drush -y config-set system.theme default bartik
-  drush -y pmu ilutheme druparcheky_theme
+  drush -y pmu ilutheme ilutheme
 }
 
 enable_ilutheme() {
-  bash generate-subtheme.sh ilutheme
   drush -y en ilutheme
   drush -y config-set system.theme default ilutheme
-  drush -y pmu druparcheky_theme bartik
+  drush -y pmu bartik
 }
-
 enable_druparcheky_theme() {
   drush -y en druparcheky_theme
   drush -y config-set system.theme default druparcheky_theme
@@ -69,16 +48,17 @@ enable_druparcheky_theme() {
 }
 
 #! LOGIC
-dos2unix *.sh
 rm -fr /mnt/c/wsl/sites/devmodules/sites/default/files/php
 # composer_require
 # zero_install_en
 # zero_install_es
+drimport
 # enable_modules
-enable_bartik
-enable_druparcheky_theme
+# enable_bartik
 # enable_ilutheme
+enable_druparcheky_theme
 drush cr
+curl http://devmodules.local | grep /themes/custom/druparcheky_theme/
 # drush cron 2>/dev/null
-cmd.exe /C start http://devmodules.local
+# cmd.exe /C start http://devmodules.local
 echo "listo."

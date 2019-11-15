@@ -5,8 +5,22 @@
  *  */
 function druparcheky_theme_preprocess(&$variables, $hook, $info)
 {
-  // * GET THEME SETTINGS
+  // * GET UI THEME SETTINGS to TWIG VARS
   $variables['media_query_helper'] = theme_get_setting('media_query_helper');
+  $variables['focus_styles'] = theme_get_setting('focus_styles');
+  $variables['fix_layout_builder'] = theme_get_setting('fix_layout_builder');
+
+  // * GET UI THEME SETTINGS and load styles
+  if (theme_get_setting('media_query_helper') == 1) {
+    $variables['#attached']['library'][] = 'druparcheky_theme/media-query-helper-styling';
+  }
+  if (theme_get_setting('focus_styles') == 1) {
+    $variables['#attached']['library'][] = 'druparcheky_theme/focus-styling';
+  }
+  if (theme_get_setting('fix_layout_builder') == 1) {
+    $variables['#attached']['library'][] = 'druparcheky_theme/fix-layout-builder-styling';
+  }
+
   // * TWIG VARS
   // {{ nid }}
   if ($node = \Drupal::request()->attributes->get('node')) {
@@ -69,6 +83,22 @@ function druparcheky_theme_form_system_theme_settings_alter(&$form, \Drupal\Core
     '#title'         => t('media_query_helper classes'),
     '#default_value' => $media_query_helper,
     '#description'   => t("if enabled, media_query_helper block will show"),
+  );
+
+  $focus_styles = theme_get_setting('focus_styles');
+  $form['focus_styles'] = array(
+    '#type'          => 'checkbox',
+    '#title'         => t('focus_styles classes'),
+    '#default_value' => $focus_styles,
+    '#description'   => t("if enabled, focus_styles will enable focus-styling libraries"),
+  );
+
+  $fix_layout_builder = theme_get_setting('fix_layout_builder');
+  $form['fix_layout_builder'] = array(
+    '#type'          => 'checkbox',
+    '#title'         => t('fix layout_builder_styles classes'),
+    '#default_value' => $fix_layout_builder,
+    '#description'   => t("if enabled, fix_layout_builder block will show"),
   );
 }
 

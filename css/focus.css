@@ -1,0 +1,6 @@
+*:focus {
+  outline-color: #c00;
+  outline-style: solid;
+  outline-width: thick;
+  text-decoration: none;
+}

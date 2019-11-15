@@ -411,28 +411,3 @@ img {
 }
 
 /* [start] /components/_base.scss */
-.js-off-canvas-dialog-open #drupal-off-canvas option {
-  background-color: #fff;
-  color: black;
-  max-width: 40%;
-}
-
-.js-off-canvas-dialog-open #drupal-off-canvas select {
-  width: 100%;
-}
-
-.js-off-canvas-dialog-open #drupal-off-canvas textarea,
-.js-off-canvas-dialog-open #drupal-off-canvas select[size],
-.js-off-canvas-dialog-open #drupal-off-canvas select[multiple] {
-  height: 200px;
-  width: 100%;
-}
-
-.js-off-canvas-dialog-open .ui-dialog.ui-dialog-off-canvas {
-  opacity: .9;
-  width: 400px !important;
-}
-
-.js-off-canvas-dialog-open .dialog-off-canvas-main-canvas {
-  padding: 0 !important;
-}

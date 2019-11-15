@@ -4,7 +4,6 @@ global-styling:
     # base: CSS reset/normalize plus HTML element styling. Key assigns a weight of CSS_BASE = -200
     base:
       css/sass-styles.css: { minified: true }
-      assets/media_query_helper/css/media_query_helper.css: { minified: true }
       css/no-sass-styles.css: { minified: true }
     # layout: macro arrangement of a web page, including any grid systems. Key assigns a weight of CSS_LAYOUT = -100
     # component: discrete, reusable UI elements. Key assigns a weight of CSS_COMPONENT = 0
@@ -18,3 +17,22 @@ global-scripts:
   dependencies:
     - core/drupal
     - core/jquery
+media-query-helper-styling:
+  version: VERSION
+  css:
+    theme:
+      assets/media_query_helper/css/media_query_helper.css: { minified: true }
+  js:
+    js/media_query_helper.js: { minified: true }
+focus-styling:
+  version: VERSION
+  css:
+    theme:
+      css/focus.css: { minified: true }
+fix-layout-builder-styling:
+  version: VERSION
+  css:
+    theme:
+      css/fix_layout_builder.css: { minified: true }
+
+
