@@ -1,33 +1,35 @@
-.js-off-canvas-dialog-open {
-  #drupal-off-canvas {
-    option {
-      background-color: #fff;
-      color: black;
-      max-width: 40%;
-    }
+/* ##################################################################### */
+/* ######### SASS GENERATED STYLE FROM YOURTHEME/SCSS/UTILITIES ######## */
+/* ##################################################################### */
 
-    select {
-      width: 100%;
-    }
+// sidebar
 
-    textarea,
-    select[size],
-    select[multiple] {
-      height: 200px;
-      width: 100%;
-    }
+.ui-dialog-off-canvas {
+  opacity: .9;
+  width: 400px !important;
+}
+
+// main
+.dialog-off-canvas-main-canvas {
+  padding: 0 !important;
+}
+
+// content
+#drupal-off-canvas {
+  option {
+    background-color: #fff;
+    color: black;
+    max-width: 40%;
   }
 
-  // sidebar
-  .ui-dialog.ui-dialog-off-canvas {
-    opacity: .9;
-    width: 400px !important;
-
-
+  select {
+    width: 100%;
   }
 
-  // main
-  .dialog-off-canvas-main-canvas {
-    padding: 0 !important;
+  textarea,
+  select[size],
+  select[multiple] {
+    height: 200px;
+    width: 100%;
   }
 }
