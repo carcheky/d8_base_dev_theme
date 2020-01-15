@@ -19,6 +19,7 @@ regions: # Regiones por defecto del tema base 'classy', se pueden sobreeescribir
   sidebar_second: Sidebar second # Items for the second sidebar.
   footer: Footer # Items for the footer region.
   hidden_blocks: Hidden blocks # Items for the hidden blocks region.
-# dependencies:
+dependencies:
   # - layout_builder_styles
-  # - layout_section_classes
+  - layout_
+  section_classes
