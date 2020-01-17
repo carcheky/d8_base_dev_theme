@@ -1,8 +1,8 @@
 #!/bin/bash
 # vars
 ORIGINAL_DIR=$(pwd)
-sudo apt install rename -y 2>/dev/null
-
+sudo apt install rename -y >/dev/null
+sudo apt autoremove >/dev/null
 # functions
 generate_theme() {
 
