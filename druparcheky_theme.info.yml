@@ -21,4 +21,4 @@ regions: # Regiones por defecto del tema base 'classy', se pueden sobreeescribir
   hidden_blocks: Hidden blocks # Items for the hidden blocks region.
 dependencies:
   # - layout_builder_styles
-  - layout_section_classes
+  # - layout_section_classes
