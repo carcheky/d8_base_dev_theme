@@ -65,6 +65,11 @@ img {
   color: #000;
 }
 
+.toolbar-icon-admin-toolbar-tools-help {
+  background-color: #fff;
+  color: #000;
+}
+
 .toolbar-icon-admin-toolbar-tools-help::before {
   background-image: none;
   background-color: #000 !important;

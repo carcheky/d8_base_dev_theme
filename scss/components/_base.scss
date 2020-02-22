@@ -19,16 +19,20 @@ img {
   color: #000;
 }
 
-.toolbar-icon-admin-toolbar-tools-help::before {
-  background-image: none;
-  background-color: #000 !important;
-  color: white;
-  border-radius: 1000px;
-  width: 30px !important;
-  height: 30px !important;
-  box-sizing: border-box;
-  padding: 0;
-  margin: 3px;
+.toolbar-icon-admin-toolbar-tools-help {
+  background-color: #fff;
+  color:#000;
+  &::before {
+    background-image: none;
+    background-color: #000 !important;
+    color: white;
+    border-radius: 1000px;
+    width: 30px !important;
+    height: 30px !important;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 3px;
+  }
 }
 
 .toolbar .toolbar-bar .toolbar-tab>.toolbar-item {
