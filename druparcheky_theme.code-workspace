@@ -8,14 +8,14 @@
   }],
   "settings": {
     "files.exclude": {
-			"**/.git": true,
-			"**/.svn": true,
-			"**/.hg": true,
-			"**/CVS": true,
-			"**/.DS_Store": true,
-			"**/vendor": true
-		},
-		"explorerExclude.backup": null,
+      "**/.git": true,
+      "**/.svn": true,
+      "**/.hg": true,
+      "**/CVS": true,
+      "**/.DS_Store": true,
+      "**/vendor": true
+    },
+    "explorerExclude.backup": null,
     "browsersync.options": {
       "proxy": "http://devmodules.local/", // con esta configuración configuras el browsersync
       "reloadDelay": 0
