@@ -65,4 +65,35 @@ img {
   color: #000;
 }
 
+.toolbar-icon-admin-toolbar-tools-help::before {
+  background-image: none;
+  background-color: #000 !important;
+  color: white;
+  -webkit-border-radius: 1000px;
+     -moz-border-radius: 1000px;
+          border-radius: 1000px;
+  width: 30px !important;
+  height: 30px !important;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  margin: 3px;
+}
+
+.toolbar .toolbar-bar .toolbar-tab > .toolbar-item.is-active {
+  background-image: none;
+}
+
+.toolbar .toolbar-bar .toolbar-tab > .toolbar-item.is-active::after {
+  content: "";
+  display: block;
+  width: 100%;
+  background-color: blue;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 3px;
+}
+
 /* [start] /components/_base.scss */

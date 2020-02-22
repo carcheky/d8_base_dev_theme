@@ -14,8 +14,39 @@ img {
   }
 }
 
-.visually-hidden{
+.visually-hidden {
   background-color: #fff;
   color: #000;
 }
+
+.toolbar-icon-admin-toolbar-tools-help::before {
+  background-image: none;
+  background-color: #000 !important;
+  color: white;
+  border-radius: 1000px;
+  width: 30px !important;
+  height: 30px !important;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 3px;
+}
+
+.toolbar .toolbar-bar .toolbar-tab>.toolbar-item {
+  &.is-active {
+    background-image: none;
+
+    // box-shadow: inset 0px 1px 1px 0px  white;
+    &::after {
+      content: "";
+      display: block;
+      width: 100%;
+      background-color: blue;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 3px;
+    }
+  }
+}
+
 /* [start] /components/_base.scss */
