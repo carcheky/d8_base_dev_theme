@@ -21,7 +21,7 @@ media-query-helper-styling:
   version: VERSION
   css:
     theme:
-      assets/media_query_helper/css/media_query_helper.css: { minified: true }
+      css/media_query_helper.css: { minified: true }
   js:
     js/media_query_helper.js: { minified: true }
 focus-styling:
