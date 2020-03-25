@@ -1,0 +1,13 @@
+{
+    "name": "carcheky/druparcheky_theme",
+    "description": "Theme for quick dev",
+    "type": "theme",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "carcheky",
+            "email": "carcheky@gmail.com"
+        }
+    ],
+    "require": {}
+}
