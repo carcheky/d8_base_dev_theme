@@ -57,6 +57,6 @@ if [ ! -d ../${THEME_NAME} ]; then
   )
   generate_theme
 fi
-
+cd ${ORIGINAL_DIR}
 rm -fr druparcheky_tmp
 
