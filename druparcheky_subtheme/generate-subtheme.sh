@@ -18,8 +18,8 @@ generate_theme() {
   sudo rm -fr .git
   rename "s/^druparcheky_subtheme/$THEME_NAME/" druparcheky_subtheme*
 
-  cd ${NEW_DIR}/config/install/
-  rename "s/^druparcheky_subtheme/$THEME_NAME/" druparcheky_subtheme*
+  # cd ${NEW_DIR}/config/install/
+  # rename "s/^druparcheky_subtheme/$THEME_NAME/" druparcheky_subtheme*
 
   # cd ${NEW_DIR}
   # ls -Rla | grep $THEME_NAME
