@@ -39,15 +39,15 @@ fi
 if [ $1 ]; then
   THEME_NAME=${1}
 fi
-if [ -d ${THEME_NAME} ]; then
+if [ -d ../${THEME_NAME} ]; then
   echo "=> ya existe ${THEME_NAME}, borrando..."
-  rm -fr ${THEME_NAME}
+  rm -fr ../${THEME_NAME}
 fi
-if [ ! -d ${THEME_NAME} ]; then
+if [ ! -d ../${THEME_NAME} ]; then
   echo "=> creando ${THEME_NAME}"
-  cp -fr ${ORIGINAL_DIR} ${THEME_NAME}
+  cp -fr ${ORIGINAL_DIR} ../${THEME_NAME}
   NEW_DIR=$(
-    cd ${THEME_NAME}
+    cd ../${THEME_NAME}
     pwd
   )
   generate_theme
