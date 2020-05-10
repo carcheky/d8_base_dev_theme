@@ -1,0 +1,9 @@
+name: druparcheky_subtheme
+type: theme
+description: 'A theme for druparcheky_subtheme.'
+core: 8.x
+version: 1.7.1
+libraries:
+  - druparcheky_subtheme/global-styling
+  - druparcheky_subtheme/global-scripts
+base theme: druparcheky_theme

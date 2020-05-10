@@ -1,0 +1,15 @@
+// [start] _mixin_font-size-rem.scss
+// variables
+@import '../_variables.scss';
+
+@function countRem($value) {
+  $remValue: $value / $font-size;
+  @return $remValue * 1rem;
+}
+
+@mixin font-size($value) {
+  // font-size: $value;
+  font-size: countRem($value); // example: @include font-size(24px);
+}
+
+// [end] _mixin_font-size-rem.scss

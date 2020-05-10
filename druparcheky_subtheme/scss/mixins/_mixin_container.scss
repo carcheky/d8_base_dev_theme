@@ -1,0 +1,16 @@
+/* [start] /mixins/_mixin_container.scss */
+// variables
+@import '../_variables.scss';
+
+@mixin container {
+  max-width: $max_width_container;
+  width: 100%;
+  margin: auto;
+}
+
+%container,
+.container {
+  @include container;
+}
+
+/* [end] /mixins/_mixin_container.scss */

@@ -1,0 +1,7 @@
+{
+    "files.eol": "\n",
+    "git.autofetch": true,
+    "git.enableSmartCommit": true,
+    "git.fetchOnPull": true,
+    "git.postCommitCommand": "sync"
+}
