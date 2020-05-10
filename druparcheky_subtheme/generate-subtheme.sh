@@ -16,15 +16,15 @@ generate_theme() {
 
   cd ${NEW_DIR}
   sudo rm -fr .git
-  rename "s/^druparcheky_theme/$THEME_NAME/" druparcheky_theme*
+  rename "s/^druparcheky_subtheme/$THEME_NAME/" druparcheky_subtheme*
 
   cd ${NEW_DIR}/config/install/
-  rename "s/^druparcheky_theme/$THEME_NAME/" druparcheky_theme*
+  rename "s/^druparcheky_subtheme/$THEME_NAME/" druparcheky_subtheme*
 
   # cd ${NEW_DIR}
   # ls -Rla | grep $THEME_NAME
 
-  find ${NEW_DIR} -type f -print0 | xargs -0 sed -i "s/druparcheky_theme/$THEME_NAME/g"
+  find ${NEW_DIR} -type f -print0 | xargs -0 sed -i "s/druparcheky_subtheme/$THEME_NAME/g"
   # find ${NEW_DIR} -type f -exec cat {} \; | grep $THEME_NAME
 
 }
