@@ -52,7 +52,6 @@
   "extensions": {
     "recommendations": [ // recomendaciones
       "aaron-bond.better-comments",
-      "bmewburn.vscode-intelephense-client",
       "charles-sanford.scss-block-comments",
       "christian-kohler.path-intellisense",
       "coenraads.bracket-pair-colorizer",
