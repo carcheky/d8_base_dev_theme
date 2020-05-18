@@ -1,7 +1,8 @@
 {
     "name": "carcheky/druparcheky_theme",
     "description": "Theme for quick dev",
-    "type": "theme",
+    "type": "drupal-theme",
+    "keywords": ["Drupal", "theme"],
     "license": "MIT",
     "authors": [
         {
