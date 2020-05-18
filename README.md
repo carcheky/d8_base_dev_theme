@@ -1,30 +1,15 @@
-# druparcheky_theme
+# Druparcheky Theme
 
-NEED UPDATE!!!!
+## Download
 
+````bash
+composer require carcheky/druparcheky_theme
+````
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+## OUTDATED BELOW THIS LINE
 
 ## ONE LINE SCRIPT
+
 ````bash
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/carcheky/druparcheky_theme/master/generate-subtheme-onelinescript.sh)"
 ````
