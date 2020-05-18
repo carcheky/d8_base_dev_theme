@@ -4,6 +4,7 @@
     "type": "drupal-theme",
     "keywords": ["Drupal", "theme"],
     "license": "MIT",
+    "homepage": "https://github.com/carcheky/druparcheky_theme",
     "authors": [
         {
             "name": "carcheky",
