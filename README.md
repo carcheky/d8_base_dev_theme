@@ -1,5 +1,29 @@
 # druparcheky_theme
 
+NEED UPDATE!!!!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## ONE LINE SCRIPT
 ````bash
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/carcheky/druparcheky_theme/master/generate-subtheme-onelinescript.sh)"
