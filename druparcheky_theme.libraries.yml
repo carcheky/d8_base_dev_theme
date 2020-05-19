@@ -12,7 +12,6 @@ global-styling:
 global-scripts:
   version: VERSION
   js:
-    js/global.js: { minified: true }
     js/browserclass.js: { minified: true }
   dependencies:
     - core/drupal
