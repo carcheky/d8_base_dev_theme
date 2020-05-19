@@ -24,7 +24,7 @@
       "./scss/sass-styles.scss" // ruta donde lee el código scss
     ],
     "liveSassCompile.settings.formats": [{
-      "format": "expanded",
+      "format": "compressed",
       "extensionName": ".css",
       "savePath": "/css" // ruta donde se genera el código scss
     }],
