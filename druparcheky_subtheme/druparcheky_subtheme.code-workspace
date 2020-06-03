@@ -17,7 +17,7 @@
     },
     "explorerExclude.backup": null,
     "browsersync.options": {
-      "proxy": "https://fmsantiago.local/", // con esta configuración configuras el browsersync
+      "proxy": "https://druparcheky_subtheme.local/", // con esta configuración configuras el browsersync
       "reloadDelay": 0
     },
     "liveSassCompile.settings.includeItems": [
