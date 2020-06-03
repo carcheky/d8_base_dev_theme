@@ -5,5 +5,5 @@ core: 8.x
 version: VERSION
 libraries:
   - druparcheky_subtheme/global-styling
-  - druparcheky_subtheme/global-scripts
+  # - druparcheky_subtheme/global-scripts
 base theme: druparcheky_theme

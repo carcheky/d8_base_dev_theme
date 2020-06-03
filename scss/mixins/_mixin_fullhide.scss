@@ -1,12 +1,7 @@
-/* [start] /mixins/_mixin_fullhide.scss */
+// [start] /mixins/_mixin_fullhide.scss
 @mixin fullhide {
   display: none;
   visibility: hidden;
-}
-
-%fullhide,
-.fullhide {
-  @include fullhide;
 }
 
 @mixin element-invisible {
@@ -16,11 +11,6 @@
   overflow: hidden;
   height: 0;
   width: 0 !important;
-}
-
-%element-invisible,
-.element-invisible {
-  @include element-invisible;
 }
 
 // display content to screen readers, and only display content when it's focused.
@@ -52,9 +42,16 @@
   }
 }
 
-%element-invisible-focusable,
-.element-invisible-focusable {
+%fullhide {
+  @include fullhide;
+}
+
+%element-invisible {
+  @include element-invisible;
+}
+
+%element-invisible-focusable {
   @include element-invisible-focusable;
 }
 
-/* [end] /mixins/_mixin_fullhide.scss */
+// [end] /mixins/_mixin_fullhide.scss

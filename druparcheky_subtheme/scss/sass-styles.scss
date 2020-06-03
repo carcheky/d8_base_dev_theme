@@ -11,12 +11,13 @@ CUALQUIER MODIFICACION DE ESTE ARCHIVO SERA SOBREESCRITA
 // Estos mixins no generan código, sólo aportan funcionalidad para desarrollar,
 // por lo que no es necesario activarlos o desactivarlos ya que no se reflejarán
 // en el css final si no se usan.
-// @import 'mixins/_mixin_container.scss'; //* crea la clase .container para reutilizar en el sitio. usa la variable $max_width_container
-// @import 'mixins/_mixin_flex.scss'; // mixin para agilizar el desarrollo con flex
-// @import 'mixins/_mixin_font-size-rem.scss'; //* usa la variable $font-size
-// @import 'mixins/_mixin_fullhide.scss'; // genera las clases .fullhide, .element-invisible, .sr-only y .sr-only-focusable
-// @import 'mixins/_mixin_mediaqueries.scss'; // mixin para agilizar el desarrollo con mediaqueries
-// @import 'mixins/_mixin_triangles.scss'; // mixin para agilizar el desarrollo de triangulos en el contenido
+@import 'mixins/_mixin_container.scss'; //* crea la clase .container para reutilizar en el sitio. usa la variable $max_width_container
+@import 'mixins/_mixin_flex.scss'; // mixin para agilizar el desarrollo con flex
+@import 'mixins/_mixin_font-size-rem.scss'; //* usa la variable $font-size
+@import 'mixins/_mixin_fullhide.scss'; // genera las clases .fullhide, .element-invisible, .sr-only y .sr-only-focusable
+@import 'mixins/_mixin_mediaqueries.scss'; // mixin para agilizar el desarrollo con mediaqueries
+@import 'mixins/_mixin_triangles.scss'; // mixin para agilizar el desarrollo de triangulos en el contenido
+// @import 'mixins/_mixin_utils.scss';// not usually needed
 
 
 //* UTILITIES
