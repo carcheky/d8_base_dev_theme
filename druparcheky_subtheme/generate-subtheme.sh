@@ -16,16 +16,16 @@ generate_theme() {
 
   cd ${NEW_DIR}
   sudo rm -fr .git
-  rename "s/^fmsantiago2/$THEME_NAME/" fmsantiago2*
+  rename "s/^druparcheky_theme/$THEME_NAME/" druparcheky_theme*
   mv $THEME_NAME.info.yml.example $THEME_NAME.info.yml
 
   # cd ${NEW_DIR}/config/install/
-  # rename "s/^fmsantiago2/$THEME_NAME/" fmsantiago2*
+  # rename "s/^druparcheky_theme/$THEME_NAME/" druparcheky_theme*
 
   # cd ${NEW_DIR}
   # ls -Rla | grep $THEME_NAME
 
-  find ${NEW_DIR} -type f -print0 | xargs -0 sed -i "s/fmsantiago2/$THEME_NAME/g"
+  find ${NEW_DIR} -type f -print0 | xargs -0 sed -i "s/druparcheky_theme/$THEME_NAME/g"
   # find ${NEW_DIR} -type f -exec cat {} \; | grep $THEME_NAME
 
 }
