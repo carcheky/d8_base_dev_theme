@@ -16,16 +16,16 @@ generate_theme() {
 
   cd ${NEW_DIR}
   sudo rm -fr .git
-  rename "s/^druparcheky_subtheme/$THEME_NAME/" druparcheky_subtheme*
+  rename "s/^fmsantiago2/$THEME_NAME/" fmsantiago2*
   mv $THEME_NAME.info.yml.example $THEME_NAME.info.yml
 
   # cd ${NEW_DIR}/config/install/
-  # rename "s/^druparcheky_subtheme/$THEME_NAME/" druparcheky_subtheme*
+  # rename "s/^fmsantiago2/$THEME_NAME/" fmsantiago2*
 
   # cd ${NEW_DIR}
   # ls -Rla | grep $THEME_NAME
 
-  find ${NEW_DIR} -type f -print0 | xargs -0 sed -i "s/druparcheky_subtheme/$THEME_NAME/g"
+  find ${NEW_DIR} -type f -print0 | xargs -0 sed -i "s/fmsantiago2/$THEME_NAME/g"
   # find ${NEW_DIR} -type f -exec cat {} \; | grep $THEME_NAME
 
 }
@@ -40,16 +40,22 @@ fi
 if [ $1 ]; then
   THEME_NAME=${1}
 fi
-if [ -d ../${THEME_NAME} ]; then
-  echo "=> ya existe ${THEME_NAME}, borrando..."
-  rm -fr ../${THEME_NAME}
+if [ ! -d ../../../custom/${THEME_NAME} ]; then
+  mkdir ../../../custom
 fi
-if [ ! -d ../${THEME_NAME} ]; then
+
+if [ -d ../../../custom/${THEME_NAME} ]; then
+  echo "=> ya existe ${THEME_NAME}, borrando..."
+  rm -fr ../../../custom/${THEME_NAME}
+fi
+if [ ! -d ../../../custom/${THEME_NAME} ]; then
   echo "=> creando ${THEME_NAME}"
-  cp -fr ${ORIGINAL_DIR} ../${THEME_NAME}
+  cp -fr ${ORIGINAL_DIR} ../../../custom/${THEME_NAME}
   NEW_DIR=$(
-    cd ../${THEME_NAME}
+    cd ../../../custom/${THEME_NAME}
+    rm generate-subtheme.sh
     pwd
   )
   generate_theme
 fi
+
