@@ -65,3 +65,4 @@
 druparcheky_theme.code-workspace export-ignore
 .gitattributes export-ignore
 .gitignore export-ignore
+scss export-ignore
