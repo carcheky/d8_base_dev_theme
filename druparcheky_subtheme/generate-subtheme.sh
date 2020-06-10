@@ -13,7 +13,7 @@ if [ ! $1 ]; then
   # THEME_NAME=${THEME_NAME}
 fi
 
-if [ $1 ]; then
+if [ ${THEME_NAME} ]; then
   THEME_NAME=${1}
   NEW_DIR=$(drush dd)/themes/custom/${THEME_NAME}
   echo "===================================================================="
