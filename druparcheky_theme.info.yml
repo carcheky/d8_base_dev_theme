@@ -2,7 +2,7 @@ name: druparcheky_theme
 type: theme
 description: 'A theme for druparcheky_theme.'
 core: 8.x
-version: 1.0.13
+version: 1.0.14
 libraries:
   - druparcheky_theme/global-styling
   - druparcheky_theme/global-scripts
